@@ -1,6 +1,6 @@
 # TUP - UTN - Laboratorio de computación 3 - Práctica
 
-Leer el enunciado de cada práctica y resolverlo adecuamente.
+Leer el enunciado de cada práctica en cada carpeta y resolverlo adecuamente de forma que se cumplan test.
 
 ## Scripts disponibles
 
@@ -13,4 +13,8 @@ Leer el enunciado de cada práctica y resolverlo adecuamente.
 
 `npm start`
 
+## Información
+
 Fecha de creación: 2022
+Profesores: Pablo Botta - Gabriel Golzman
+Práctica sobre React utilizando git
