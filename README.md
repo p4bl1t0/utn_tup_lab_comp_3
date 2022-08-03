@@ -1,6 +1,6 @@
 # TUP - UTN - Laboratorio de computación 3 - Práctica
 
-Leer el enunciado de cada práctica y resolverlo.
+Leer el enunciado de cada práctica y resolverlo adecuamente.
 
 ## Scripts disponibles
 
