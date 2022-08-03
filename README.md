@@ -13,3 +13,5 @@ Instalar el repositorio:
 Ejecutar el proyecto:
 
 ### `npm start`
+
+Fecha de creación: 2022
