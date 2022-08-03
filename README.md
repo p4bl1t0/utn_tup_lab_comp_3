@@ -1,19 +1,16 @@
-# tup_lab_3_practica
-TUP - UTN - Laboratorio de computación 3 - Práctica
+# TUP - UTN - Laboratorio de computación 3 - Práctica
 
 Leer el enunciado de cada práctica y resolverlo.
 
 ## Scripts disponibles
 
-Instalar el repositorio:
+- Instalar el repositorio:
 
-### `npm install`
-
-
-Ejecutar el proyecto:
-
-### `npm start`
-
-Rama: main
+`npm install`
 
 
+- Ejecutar el proyecto:
+
+`npm start`
+
+Fecha de creación: 2022
