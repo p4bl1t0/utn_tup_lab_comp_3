@@ -1,6 +1,6 @@
 # TUP - UTN - Laboratorio de computación 3 - Práctica
 
-Leer el enunciado de cada práctica en cada carpeta y resolverlo de forma que se cumplan test.
+Leer el enunciado de cada práctica en cada carpeta y resolverlo adecuamente de forma que se cumplan test.
 
 ## Scripts disponibles
 
