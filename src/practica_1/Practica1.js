@@ -41,7 +41,7 @@ const watchList = [
 		Poster:
 			'http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg',
 		Metascore: '74',
-		imdbRating: '8.6',
+		imdbRating: '7.6',
 		imdbVotes: '910,366',
 		imdbID: 'tt0816692',
 		Type: 'movie',
@@ -136,9 +136,9 @@ export default function Practica1 () {
         <div>
             <p>Películas de Christopher Nolan</p>
             <ul>
-                { titlesArray.map((item, index) => {
+                { titlesArray.map((item, index) => (
                     <li key={index}>{item}</li>
-                })}
+                ))}
             </ul>
         </div>
     )
