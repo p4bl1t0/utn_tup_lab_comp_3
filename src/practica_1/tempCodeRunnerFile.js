@@ -122,30 +122,8 @@ const watchList = [
 ];
 
 const returnMovieTitle = (watchlist) => {
-	return watchlist.filter((elemt)=> elemt.Director === 'Christopher Nolan' && parseFloat(elemt.imdbRating) > 8.0).map((item)=>item.Title);
+	return watchlist.filter((elemt)=> elemt.Director == 'Christopher Nolan' && parseFloat(elemt.imdbRating) > 8.0).map((item)=>item.Title);
 }
 
-
-// let titlesArray = returnMovieTitle(watchList);
-// console.log(titlesArray);
-
-export default function Practica1 () {
-    let titlesArray = returnMovieTitle(watchList);
-    console.log(titlesArray);
-    if (!Array.isArray(titlesArray)) {
-        titlesArray = [];
-    }
-    return (
-        <div>
-            <p>Películas de Christopher Nolan</p>
-            <ul>
-                { titlesArray.map((item, index) => (
-                    <li key={index}>{item}</li>
-                ))}
-            </ul>
-        </div>
-    )
-} 
-
-// 
-// 
+let titlesArray = returnMovieTitle(watchList);
+console.log(titlesArray);

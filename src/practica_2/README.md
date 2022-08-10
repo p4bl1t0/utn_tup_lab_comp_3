@@ -2,9 +2,7 @@
 
 
 ## Pre-requisitos
-
 Considerando el siguiente objeto de JavaScript:
-
 
 ```
 const site = {
@@ -13,11 +11,7 @@ const site = {
 }
 ```
 
-
-
 ### Tarea 1
-
-
 
 * Crear la carpeta `components` dentro de `practica_2` 
 * Crear el componente `Title` que reciba como parámetro la propiedad `pageTitle` y la renderice dentro de una etiqueta de encabezado (`h1`).
@@ -27,8 +21,6 @@ const site = {
 
 
 ### Tarea 2: 
-
-
 
 * Crear el componente `Header` que importará el componente `Title` y recibirá como propiedad `pageTitle`
 * Crear el componente `Main` que importará el componente `Body` y recibirá como propiedad `pageBody` y además renderizar una lista de menú (`navbar` y `ul`) con enlaces a 2 sitios web externos.
