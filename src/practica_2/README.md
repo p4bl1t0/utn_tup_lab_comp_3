@@ -23,9 +23,10 @@ const site = {
 ### Tarea 2: 
 
 * Crear el componente `Header` que importará el componente `Title` y recibirá como propiedad `pageTitle`
-* Crear el componente `Main` que importará el componente `Body` y recibirá como propiedad `pageBody` y además renderizar una lista de menú (`navbar` y `ul`) con enlaces a 2 sitios web externos.
+* Crear el componente `Main` que importará el componente `Body` y recibirá como propiedad `pageBody` y además renderizar una lista de menú (`nav` y `ul`) con enlaces a 2 sitios web externos.
 * Refactorizar App para utilizar los componente `Main` y `Header`
 * Bonus: Enviar los enlaces a sitio web externos como `props` enviadas a `Main`
+* Bonus: Utilizar la función `props` para renderizar los links
 
 
 ### Tarea 3
