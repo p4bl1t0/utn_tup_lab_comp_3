@@ -9,13 +9,16 @@ const site = {
 const { pageTitle } = site;
 const { pageBody } = site;
 
-const links = ["https://www.youtube.com/", "https://www.facebook.com/"];
+const links = [
+  "https://www.youtube.com/", 
+  "https://www.facebook.com/"
+];
 
 export default function Practica2() {
   return (
     <>
       <Header pageTitle={pageTitle} />
-      <Main pageBody={[pageBody]} />
+      <Main pageBody={pageBody} />
     </>
   );
 }
