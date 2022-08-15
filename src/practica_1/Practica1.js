@@ -123,9 +123,8 @@ const watchList = [
 	},
 ];
 
-const returnMovieTitle = (watchlist) => {
-    // Aquí adentro escriban la función
-}
+const returnMovieTitle = watchlist => watchlist.filter(aux => aux.imdbRating>8 && aux.Director==='Christopher Nolan').map(aux => aux.Title);
+
 export default function Practica1 () {
     let titlesArray = returnMovieTitle(watchList);
     console.log(titlesArray);
