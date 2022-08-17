@@ -1,17 +1,21 @@
 import React from 'react'
+import BlogPost from './BlogPost';
 import Body from './Body';
+import './StylesGeneral.css'
 
-const Main = ({pageBody,link1,link2}) => {
+const Main = ({pageBody,links,pageTitle}) => {
   
     return (
         <>
         <nav>
             <ul>
-                <li>{link1}</li>
-                <li>{link2}</li>
+                {links.map((item)=><li><a href={item}>{item}</a></li>)}
             </ul>
         </nav>
-        <Body pageBody={pageBody}/>
+        <div className='bodyMain'>
+            <Body body={pageBody}/>
+        </div>
+        <BlogPost body={pageBody} title={pageTitle}/>
         <p>All you people in the house<br></br>Get up and scream and shout<br></br>Say hey hey hey</p>    
         </>
     )

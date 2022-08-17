@@ -1,11 +1,11 @@
 import React from 'react'
 
 
-export const Title = ({pageTitle}) => {
+export const Title = ({title}) => {
   
     return (
     <>
-        <h1>{pageTitle}</h1>
+        <h1>{title}</h1>
     </>
   )
 
