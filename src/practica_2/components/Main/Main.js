@@ -10,7 +10,7 @@ const Main = ({ pageBody, links }) => {
       <Body className="body-font" body={pageBody} />
       <nav>
         <ul>
-          {links.map((item) => (
+          {(links || []).map((item) => (
             <li><a href={item}>{item}</a></li>
           ))}
         </ul>
