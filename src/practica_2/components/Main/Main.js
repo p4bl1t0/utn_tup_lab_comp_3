@@ -1,10 +1,13 @@
+import "./Main.css"
+
 import Body from "./Body";
 import BlogPost from "../BlogPost/BlogPost";
 
 const Main = ({ pageBody, links }) => {
+  pageBody = pageBody.toUpperCase();
   return (
     <>
-      <Body body={pageBody} />
+      <Body className="body-font" body={pageBody} />
       <nav>
         <ul>
           {links.map((item) => (

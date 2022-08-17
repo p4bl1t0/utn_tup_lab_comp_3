@@ -1,5 +1,5 @@
-const Body = ({ body }) => {
-  return <div>{body}</div>;
+const Body = ({ body, className }) => {
+  return <div className={className}>{body}</div>;
 };
 
 export default Body;
