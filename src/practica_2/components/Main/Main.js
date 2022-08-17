@@ -11,6 +11,7 @@ const Main = ({ pageBody, links }) => {
           ))}
         </ul>
       </nav>
+      <h3>Fin de la sección</h3>
     </>
   );
 };

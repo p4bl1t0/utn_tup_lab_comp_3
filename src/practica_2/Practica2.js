@@ -1,5 +1,4 @@
-import Header from "./components/Header/Header"
-import Main from "./components/Main/Main"
+import Page from "./components/Page/Page"
 
 const site = {
     pageTitle: 'Unidad 1.2 - Práctica',
@@ -10,8 +9,7 @@ const site = {
 export default function Practica2 () {
     return (
         <div>
-            <Header pageTitle={site.pageTitle}/>
-            <Main pageBody={site.pageBody} links={site.links}/>
+            <Page pageTitle={site.pageTitle} pageBody={site.pageBody} links={site.links}/>
         </div>
     );
 }
