@@ -1,7 +1,8 @@
 import Title from "./Title";
 
 const Header = ({ pageTitle }) => {
-  return <Title pageTitle={pageTitle} />;
+  pageTitle = pageTitle.toUpperCase();
+  return <Title title={pageTitle} />;
 };
 
 export default Header;
