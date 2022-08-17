@@ -9,7 +9,7 @@ const site = {
 export default function Practica2 () {
     return (
         <div>
-            <Page pageTitle={site.pageTitle} pageBody={site.pageBody} links={site.links}/>
+            <Page pageTitle={site.pageTitle} pageBody={site.pageBody} links={site.links} />
         </div>
     );
 }
