@@ -124,8 +124,13 @@ const watchList = [
 ];
 
 const returnMovieTitle = (watchlist) => {
-    // Aquí adentro escriban la función
+	let moviesToReturn = []
+
+	moviesToReturn = watchList.filter(movie => movie.Director === 'Christopher Nolan' && movie.imdbRating > 8)
+	
+	return moviesToReturn.map(movie => movie.Title)
 }
+
 export default function Practica1 () {
     let titlesArray = returnMovieTitle(watchList);
     console.log(titlesArray);
