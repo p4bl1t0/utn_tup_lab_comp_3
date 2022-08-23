@@ -18,7 +18,6 @@ const site = {
 ### Tarea 1
 
 
-
 * Crear la carpeta `components` dentro de `practica_2` 
 * Crear el componente `Title` que reciba como parámetro la propiedad `pageTitle` y la renderice dentro de una etiqueta de encabezado (`h1`).
 * Crear el componente `Body` que reciba como parámetro la propiedad `pageBody` y la renderice dentro de una etiqueta `div`
@@ -32,7 +31,7 @@ const site = {
 
 * Crear el componente `Header` que importará el componente `Title` y recibirá como propiedad `pageTitle`
 * Crear el componente `Main` que importará el componente `Body` y recibirá como propiedad `pageBody` y además renderizar una lista de menú (`nav` y `ul`) con enlaces a 2 sitios web externos.
-* Refactorizar App para utilizar los componente `Main` y `Header`
+* Refactorizar Practica2 para utilizar los componente `Main` y `Header`
 * Bonus: Enviar los enlaces a sitio web externos como `props` enviadas a `Main`
 * Bonus: Utilizar la función `map` para renderizar los links
 
