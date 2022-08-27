@@ -1,11 +1,10 @@
 const ArrayWriter = ({ array }) => {
   return array.map((item) => {
-    if (typeof item == "number") {
-      let evenOdd = parseInt(item) % 0 ? "par" : "impar";
+    if (!isNaN(item) && !isNaN(parseFloat(item))) {
+      let evenOdd = Math.round(parseFloat(item)) % 2 == 0 ? "Par" : "Impar";
       return (
         <div>
-          <p>{item}</p>
-          <p>{evenOdd}</p>
+          <p>{Math.round(item)} ({evenOdd})</p>
         </div>
       );
     } else
