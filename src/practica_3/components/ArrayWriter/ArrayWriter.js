@@ -1,7 +1,9 @@
+import React from "react";
+
 const ArrayWriter = ({ array }) => {
-  return array.map((item) => {
+  return React.Children.toArray(array.map((item) => {
     if (!isNaN(item) && !isNaN(parseFloat(item))) {
-      let evenOdd = Math.round(parseFloat(item)) % 2 == 0 ? "Par" : "Impar";
+      let evenOdd = Math.round(parseFloat(item)) % 2 === 0 ? "Par" : "Impar";
       return (
         <div>
           <p>{Math.round(item)} ({evenOdd})</p>
@@ -14,7 +16,7 @@ const ArrayWriter = ({ array }) => {
           <button>Borrar</button>
         </div>
       );
-  });
+  }));
 };
 
 export default ArrayWriter;

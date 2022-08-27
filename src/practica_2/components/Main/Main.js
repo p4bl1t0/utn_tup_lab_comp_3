@@ -1,3 +1,5 @@
+import React from "react";
+
 import "./Main.css";
 
 import Body from "./Body";
@@ -9,11 +11,13 @@ const Main = ({ body, links }) => {
       <Body className="body-style" body={body} />
       <nav>
         <ul>
-          {(links || []).map((item) => (
-            <li>
-              <a href={item}>{item}</a>
-            </li>
-          ))}
+          {React.Children.toArray(
+            (links || []).map((item) => (
+              <li>
+                <a href={item}>{item}</a>
+              </li>
+            ))
+          )}
         </ul>
       </nav>
       <BlogPost
