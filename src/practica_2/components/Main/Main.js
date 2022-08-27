@@ -3,10 +3,10 @@ import "./Main.css";
 import Body from "./Body";
 import BlogPost from "../BlogPost/BlogPost";
 
-const Main = ({ pageBody, links }) => {
+const Main = ({ body, links }) => {
   return (
     <>
-      <Body className="body-style" body={pageBody} />
+      <Body className="body-style" body={body} />
       <nav>
         <ul>
           {(links || []).map((item) => (

@@ -1,13 +1,5 @@
-import Main from "../Main/Main";
-import Header from "../Header/Header";
-
-const Page = ({ pageTitle, pageBody, links }) => {
-  return (
-    <div>
-      <Header pageTitle={pageTitle} />
-      <Main pageBody={pageBody} links={links} />
-    </div>
-  );
+const Page = ({ children }) => {
+  return <div>{children}</div>
 };
 
 export default Page;

@@ -2,8 +2,8 @@ import "./Header.css";
 
 import Title from "./Title";
 
-const Header = ({ pageTitle }) => {
-  return <Title className="title-style" title={pageTitle} />;
+const Header = ({ title }) => {
+  return <Title className="title-style" title={title} />;
 };
 
 export default Header;
