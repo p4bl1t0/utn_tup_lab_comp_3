@@ -19,14 +19,6 @@ const site = {
 - Importar los componentes `Title` y `Body` desde `Practica2.js` y renderizarlos pasándose como propiedades sus respectivos valores de la constante `site`.
 - Bonus: utilizar `object destructuring` para leer las propiedades pasadas a los componentes como argumentos
 
-### Tarea 2: REALIZADO
-
-- Crear la carpeta `components` dentro de `practica_2`
-- Crear el componente `Title` que reciba como parámetro la propiedad `pageTitle` y la renderice dentro de una etiqueta de encabezado (`h1`).
-- Crear el componente `Body` que reciba como parámetro la propiedad `pageBody` y la renderice dentro de una etiqueta `div`
-- Importar los componentes `Title` y `Body` desde `Practica2.js` y renderizarlos pasándose como propiedades sus respectivos valores de la constante `site`.
-- Bonus: utilizar `object destructuring` para leer las propiedades pasadas a los componentes como argumentos
-
 ### Tarea 2:
 
 - Crear el componente `Header` que importará el componente `Title` y recibirá como propiedad `pageTitle`
