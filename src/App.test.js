@@ -24,9 +24,9 @@ test('maps Nolan well', () => {
 });
 test('test practica 2', () => {
   render(<Practica2 />);
-  const heading = screen.getByRole('heading');
-  expect(heading).toBeInTheDocument();
-  expect(heading.textContent).toBe('Unidad 1.2 - Práctica');
+  const headings = screen.queryAllByRole('heading');
+  expect(headings.length).toBe(2);
+  expect(headings[0].textContent).toBe('Unidad 1.2 - Práctica');
   const navigation = screen.getByRole('navigation');
   expect(navigation).toBeInTheDocument();
   const body = screen.getByText('Implementación de árbol de componentes y propiedades en React.');
