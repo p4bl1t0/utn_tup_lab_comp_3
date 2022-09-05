@@ -21,7 +21,13 @@ const Input = () => {
     let newArray = arraySave.slice(0);
     newArray.splice(index, 1);
     setArraySave(newArray);
-  }
+  };
+
+  const changeArrayItem = (index, newItem) => {
+    let editedArray = arraySave.slice(0);
+    editedArray[index] = newItem;
+    setArraySave(editedArray);
+  };
 
   return (
     <div>
@@ -29,7 +35,7 @@ const Input = () => {
       <button onClick={clickButtonHandler} type="button">
         Enviar
       </button>
-      <ArrayWriter array={arraySave} deleteArrayItem={deleteArrayItem} />
+      <ArrayWriter array={arraySave} deleteArrayItem={deleteArrayItem} changeArrayItem={changeArrayItem} />
     </div>
   );
 };

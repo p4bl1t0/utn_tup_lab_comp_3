@@ -1,6 +1,7 @@
-const ArrayWriter = ({ array, deleteArrayItem }) => {
+import EditableInput from "./EditableInput";
+
+const ArrayWriter = ({ array, deleteArrayItem, changeArrayItem }) => {
   const deleteButtonHandler = (index) => {
-    console.log(index);
     deleteArrayItem(index);
   };
 
@@ -17,8 +18,12 @@ const ArrayWriter = ({ array, deleteArrayItem }) => {
     } else
       return (
         <div key={index}>
-          <input value={item} key={index} />
-          <button>Editar</button>
+          <EditableInput
+            value={item}
+            onEdit={(newValue) => {
+              changeArrayItem(index, newValue);
+            }}
+          />
           <button onClick={() => deleteButtonHandler(index)}>Borrar</button>
         </div>
       );
