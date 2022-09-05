@@ -1,8 +1,6 @@
-import React from "react";
-
 const ArrayWriter = ({ array, deleteArrayItem }) => {
   const deleteButtonHandler = (index) => {
-    console.log(index)
+    console.log(index);
     deleteArrayItem(index);
   };
 
@@ -19,7 +17,7 @@ const ArrayWriter = ({ array, deleteArrayItem }) => {
     } else
       return (
         <div key={index}>
-          <input value={item} key={index}/>
+          <input value={item} key={index} />
           <button>Editar</button>
           <button onClick={() => deleteButtonHandler(index)}>Borrar</button>
         </div>
