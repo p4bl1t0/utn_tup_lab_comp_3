@@ -133,7 +133,6 @@ const returnMovieTitle = () => {
 
 export default function Practica1 () {
     let titlesArray = returnMovieTitle(watchList);
-    console.log(titlesArray);
     if (!Array.isArray(titlesArray)) {
         titlesArray = [];
     }
