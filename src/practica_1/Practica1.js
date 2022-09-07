@@ -123,7 +123,7 @@ const watchList = [
 	},
 ];
 
-const returnMovieTitle = (watchlist) => {
+const returnMovieTitle = () => {
 	let moviesToReturn = []
 
 	moviesToReturn = watchList.filter(movie => movie.Director === 'Christopher Nolan' && movie.imdbRating > 8)
