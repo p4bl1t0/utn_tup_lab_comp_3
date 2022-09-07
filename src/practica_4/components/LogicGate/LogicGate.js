@@ -34,7 +34,7 @@ const LogicGate = ({ input1, input2, saveResult }) => {
   };
 
   return (
-    <>
+    <div>
       <label for="selectGate">Compuerta lógica:</label>
       <select id="selectGate" onChange={selectGateHandler}>
         <option value={"or"}>OR</option>
@@ -44,7 +44,7 @@ const LogicGate = ({ input1, input2, saveResult }) => {
         <option value={"xor"}>XOR</option>
       </select>
       <button onClick={operationResult}>Calcular</button>
-    </>
+    </div>
   );
 };
 
