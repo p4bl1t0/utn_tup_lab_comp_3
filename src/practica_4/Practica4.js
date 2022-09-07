@@ -46,8 +46,8 @@ export default function Practica4() {
   };
 
   return (
-    <>
-      <div className="logic-gates">
+    <section className="logic-section">
+      <div className="logic-div">
         <LogicInput saveInput={inputValueHandler} />
         <LogicCheckbox saveCheckbox={checkboxValueHandler} />
         <LogicGate
@@ -57,7 +57,7 @@ export default function Practica4() {
         />
         <span>Salida: {result1}</span>
       </div>
-      <div className="logic-gates">
+      <div className="logic-div">
         <LogicRange saveRange={rangeValueHandler} />
         <LogicRadio saveRadio={radioValueHandler} />
         <LogicGate
@@ -67,7 +67,7 @@ export default function Practica4() {
         />
         <span>Salida: {result2}</span>
       </div>
-      <div className="logic-gates">
+      <div className="logic-div">
         <LogicGate
           input1={result1}
           input2={result2}
@@ -75,6 +75,6 @@ export default function Practica4() {
         />
         <span>Salida utilizando los dos resultados anteriores: {result3}</span>
       </div>
-    </>
+    </section>
   );
 }
