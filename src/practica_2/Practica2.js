@@ -1,6 +1,7 @@
-import Page from "./components/Page/Page.js";
-import Header from "./components/Header/Header.js";
-import Main from "./components/Main/Main.js";
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Page from "./components/Page";
+
 
 const site = {
   pageTitle: "Unidad 1.2 - Práctica",
@@ -12,9 +13,10 @@ export default function Practica2() {
   return (
     <div>
       <Page>
-        <Header title={site.pageTitle} />
-        <Main body={site.pageBody} links={site.links} />
+        <Header pageTitle = {site.pageTitle} />
+        <Main pageBody = {site.pageBody} links = {site.links}/>
       </Page>
+      
     </div>
   );
 }
