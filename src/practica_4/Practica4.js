@@ -6,7 +6,7 @@ export default function Practica4 () {
 
     const randomValue = Math.round(Math.random());
 
-    const [inputOneValue, setInput1Value] = useState(randomValue);
+    const [inputOneValue, setInputOneValue] = useState(randomValue);
 
     const [checkboxValue, setCheckboxValue] = useState(false);
 
@@ -14,10 +14,9 @@ export default function Practica4 () {
 
     const onChangeInput = (event) => {
         if (event.target.value !== '1') {
-            setInput1Value(0);
-        }
-        else {
-            setInput1Value(1);
+            setInputOneValue(0);
+        } else {
+            setInputOneValue(1);
         }
     }
 
