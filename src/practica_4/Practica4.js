@@ -15,6 +15,7 @@ export default function Practica4() {
   const [radioValue, setRadioValue] = useState(0);
   const [result1, setResult1] = useState("");
   const [result2, setResult2] = useState("");
+  const [result3, setResult3] = useState("");
 
   const inputValueHandler = (event) => {
     parseInt(event.target.value) === 1 ? setInputValue(1) : setInputValue(0);
@@ -40,9 +41,13 @@ export default function Practica4() {
     setResult2(res);
   };
 
+  const saveResult3Handler = (res) => {
+    setResult3(res);
+  };
+
   return (
     <>
-      <div className="logic-ic">
+      <div className="logic-gates">
         <LogicInput saveInput={inputValueHandler} />
         <LogicCheckbox saveCheckbox={checkboxValueHandler} />
         <LogicGate
@@ -52,7 +57,7 @@ export default function Practica4() {
         />
         <span>Salida: {result1}</span>
       </div>
-      <div className="logic-rr">
+      <div className="logic-gates">
         <LogicRange saveRange={rangeValueHandler} />
         <LogicRadio saveRadio={radioValueHandler} />
         <LogicGate
@@ -61,6 +66,14 @@ export default function Practica4() {
           saveResult={saveResult2Handler}
         />
         <span>Salida: {result2}</span>
+      </div>
+      <div className="logic-gates">
+        <LogicGate
+          input1={result1}
+          input2={result2}
+          saveResult={saveResult3Handler}
+        />
+        <span>Salida utilizando los dos resultados anteriores: {result3}</span>
       </div>
     </>
   );
