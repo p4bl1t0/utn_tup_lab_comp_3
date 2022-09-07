@@ -5,3 +5,11 @@
     border: 1px solid black;
     background-color: cyan;
 }
+
+.logic-rr {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    border: 1px solid black;
+    background-color: cyan;
+}
