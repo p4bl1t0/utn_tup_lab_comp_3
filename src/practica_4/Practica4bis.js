@@ -29,8 +29,6 @@ export default function Practica4 () {
         }
     }
 
-    
-
     const onLogicGateChange = (event) => {
         setLogicGate(event.target.value)
     }

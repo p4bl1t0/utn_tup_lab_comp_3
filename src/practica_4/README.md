@@ -3,13 +3,7 @@
 
 ## Pre-requisitos
 
-Instalar las dependencias del ejercicio:
-
-```
-npm install
-```
-
-Considerando el JSX brindado en `Practica4.js`
+Considerando el JSX brindado en `Practica4.js` 
 
 
 ### Tarea 1
@@ -25,12 +19,6 @@ Considerando el JSX brindado en `Practica4.js`
 ### Tarea 3
 - Capturar el evento de cambio del contenido del `select` y mostrar el resultado de aplicar la puerta lógica seleccionada al valor del estado de `input1` y el de `checkbox` de  en el espacio reservado para tar fin
 - Bonus: Refactorizar la selección y el cálculo de la compuerta lógica como un componente.
-
-
-### Tarea 3
-- Capturar el evento de cambio del contenido del `select` y mostrar el resultado de aplicar la puerta lógica seleccionada al valor del estado de `input1` y el de `checkbox` de  en el espacio reservado para tar fin
-- Bonus: Refactorizar la selección y el cálculo de la compuerta lógica como un componente.
-
 
 ### Tarea 4
 - Refactorizar la selección y el cálculo de la compuerta lógica como un componente llamado `LogicGates`

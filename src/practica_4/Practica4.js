@@ -1,14 +1,16 @@
 import { useState } from "react";
 
+import { calcLogicGate } from "./helpers";
+
 export default function Practica4 () {
 
     const randomValue = Math.round(Math.random());
 
-    const [input1Value, setInput1Value] = useState(randomValue);
+    const [inputOneValue, setInput1Value] = useState(randomValue);
 
     const [checkboxValue, setCheckboxValue] = useState(false);
 
-    const [selectValue, setSelectValue] = useState('and');
+    const [selectValue, setSelectValue] = useState();
 
     const onChangeInput = (event) => {
         if (event.target.value !== '1') {
@@ -32,17 +34,11 @@ export default function Practica4 () {
         setSelectValue(event.target.value);
     }
 
-    let andOutput = (input1Value && checkboxValue);
-    let orOutput = (input1Value || checkboxValue);
-    let nandOutput = !andOutput;
-    let norOutput = !orOutput;
-
-
     return (
         <div className="App">
             <div>
                 <label for="input1">Entrada 1:</label>
-                <input type="number" id="input1" onChange={onChangeInput} value={input1Value}/>
+                <input type="number" id="input1" onChange={onChangeInput} value={inputOneValue}/>
             </div>
             <div>
                 <label><input type="checkbox" onChange={onChangeCheckbox} checked={checkboxValue}/> Entrada 2</label>
@@ -50,17 +46,13 @@ export default function Practica4 () {
                 <div>
                 <label for="selectGate">Compuerta lógica:</label>
                 <select id="selectGate" onChange={onChangeSelect}>
-                    <option value='and'>AND</option>
-                    <option value='or' >OR</option>
-                    <option value='nand'>NAND</option>
-                    <option value='nor'>NOR</option>
+                    <option value='OR'>OR</option>
+                    <option value='AND'>AND</option>
+                    <option value='NOR'>NOR</option>
+                    <option value='NAND'>NAND</option>
                 </select>
             </div>
-            <div><span>Salida: {(selectValue === 'and'? andOutput 
-            : (selectValue === 'or' ? orOutput 
-            : (selectValue === 'nor' ? nandOutput 
-            : norOutput)))
-            }</span></div>
+            <div><span>Salida: {calcLogicGate(inputOneValue, checkboxValue, selectValue)}</span></div>
         </div>
     );
 }
