@@ -1,6 +1,8 @@
 import { useState } from "react";
-import LogicCheckbox from "./components/LogicCheckbox/LogicCheckbox";
 
+import "./Practica4.css";
+
+import LogicCheckbox from "./components/LogicCheckbox/LogicCheckbox";
 import LogicGate from "./components/LogicGate/LogicGate";
 import LogicInput from "./components/LogicInput/LogicInput";
 
@@ -22,17 +24,20 @@ export default function Practica4() {
   };
 
   return (
-    <div className="App">
-      <LogicInput saveInput={inputValueHandler} />
-      <LogicCheckbox saveCheckbox={checkboxValueHandler} />
-      <LogicGate
-        input1={inputValue}
-        input2={checkboxValue}
-        saveResult={saveResultHandler}
-      />
-      <div>
-        <span>Salida: {result}</span>
+    <>
+      <div className="logic-ic">
+        <LogicInput saveInput={inputValueHandler} />
+        <LogicCheckbox saveCheckbox={checkboxValueHandler} />
+        <LogicGate
+          input1={inputValue}
+          input2={checkboxValue}
+          saveResult={saveResultHandler}
+        />
+        <div>
+          <span>Salida: {result}</span>
+        </div>
       </div>
-    </div>
+      <div></div>
+    </>
   );
 }
