@@ -3,13 +3,7 @@
 
 ## Pre-requisitos
 
-Instalar las dependencias del ejercicio:
-
-```
-npm install
-```
-
-Considerando el JSX brindado en `App.js` 
+Considerando el JSX brindado en `Practica4.js` 
 
 
 ### Tarea 1
