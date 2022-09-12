@@ -28,7 +28,6 @@ const site = {
 ### Tarea 2: 
 
 
-
 * Crear el componente `Header` que importará el componente `Title` y recibirá como propiedad `pageTitle`
 * Crear el componente `Main` que importará el componente `Body` y recibirá como propiedad `pageBody` y además renderizar una lista de menú (`nav` y `ul`) con enlaces a 2 sitios web externos.
 * Refactorizar Practica2 para utilizar los componente `Main` y `Header`
@@ -46,7 +45,7 @@ const site = {
 ### Tarea 4 - Reutilización de componentes
 
 * Refactorizar las propiedades `pageTitle` y `pageBody` de `Title` y `Body` respectivamente para que llamen `title` y `body`
-* Crear un componente `BlogPost` que renderice los componentes `Title` y `Body` pasando como paramétros `title` y `body` los datos de una noticia del diario seleccionada a la azar. Colocar `BlogPost` dentro de `Main` a continuación del `Body` 
+* Crear un componente `BlogPost` que renderice los componentes `Title` y `Body` pasando como paramétros `title` y `body` los datos de una noticia del diario seleccionada al azar. Colocar `BlogPost` dentro de `Main` a continuación del `Body` 
 * Realizar lo necesario para que el título de la página situado en `Header` se vea en mayúsculas mientras que el título del `BlogPost` se vea normal.
 * Realizar lo necesario para que el body de la página situado en `Main` se vea en mayúsculas en italics  mientras que el body del `BlogPost` se vea normal.
-BONUS: Utilizar CSS para agregar alguna diferenciación extra
+BONUS: Utilizar CSS para agregar alguna diferenciación extra.
