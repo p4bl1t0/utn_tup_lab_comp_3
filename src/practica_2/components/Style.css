@@ -1,0 +1,16 @@
+.titleHeader,
+.bodyMain {
+  text-transform: lowercase;
+}
+
+.bodyMain {
+  font-size: italic;
+}
+
+.p {
+  line-height: 100%;
+}
+
+.ul {
+  font-size: smaller;
+}

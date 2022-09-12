@@ -1,14 +1,20 @@
-
-import './App.css';
-import Menu from './Menu';
-import { useState } from 'react';
-import MainContent from './MainContent';
+import "./App.css";
+import Menu from "./Menu";
+import { useState } from "react";
+import MainContent from "./MainContent";
 
 function App() {
-  const [practiceSelected, setPracticeSelected] = useState('#practica_1');
+  const [practiceSelected, setPracticeSelected] = useState(
+    "#practica_1",
+    "#practica_2"
+  );
   return (
     <div>
-      <Menu onOptionSelected={(t) => { setPracticeSelected(t) }} />
+      <Menu
+        onOptionSelected={(t) => {
+          setPracticeSelected(t);
+        }}
+      />
       <MainContent practiceSelected={practiceSelected} />
     </div>
   );
