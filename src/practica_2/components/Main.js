@@ -3,7 +3,7 @@ import Body from "./Body";
 import BlogPost from "./BlogPost";
 import "./Style.css";
 
-const Main = ({ pageBody, links }) => {
+const Main = ({ pageBody, links, pageTitle }) => {
   return (
     <>
       <nav>
@@ -11,7 +11,6 @@ const Main = ({ pageBody, links }) => {
           {links ||
             [].map((item) => (
               <li>
-                {" "}
                 <a href={item}> {item} </a>{" "}
               </li>
             ))}
