@@ -1,6 +1,7 @@
 import { useRef } from "react";
 
 export default function Practica4 () {
+    // eslint-disable-next-line
     const inputRef = useRef();
     return (
         <div className="App">

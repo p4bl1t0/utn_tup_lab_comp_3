@@ -1,6 +1,8 @@
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 
+import Page from "./components/Page";
+
 const site = {
   pageTitle: "Unidad 1.2 - Práctica",
   pageBody: "Implementación de árbol de componentes y propiedades en React.",
@@ -9,16 +11,16 @@ const site = {
 const { pageTitle } = site;
 const { pageBody } = site;
 
-const links = [
-  "https://www.youtube.com/", 
-  "https://www.facebook.com/"
+const pages = [
+  { title: "Youtube", link: "https://www.youtube.com/" },
+  { title: "Facebook", link: "https://www.facebook.com/" },
 ];
 
 export default function Practica2() {
   return (
-    <>
-      <Header pageTitle={pageTitle} />
-      <Main pageBody={pageBody} />
-    </>
+    <Page>
+      <Header title={pageTitle} />
+      <Main body={pageBody} pages={pages} />
+    </Page>
   );
 }

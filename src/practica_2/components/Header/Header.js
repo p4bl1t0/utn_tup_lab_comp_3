@@ -1,10 +1,11 @@
-import Title from "../Title/Title";
+import Title from "../Title";
 
-const Header = ({ pageTitle }) => {
+import "./Header.css";
+const Header = ({ title }) => {
   return (
-    <>
-      <Title pageTitle={pageTitle} />
-    </>
+    <div className="header">
+      <Title title={title} />
+    </div>
   );
 };
 

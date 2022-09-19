@@ -1,13 +1,21 @@
-import Body from "../Body/Body";
+import BlogPost from "../BlogPost/BlogPost";
+import Body from "../Body";
 
-const Main = ({pageBody}) => {
+import "./Main.css";
+
+const Main = ({ body, pages }) => {
+  const mapedLinks = pages.map((item) => (
+    <ul>
+      <a href={item.link}>{item.title}</a>
+    </ul>
+  ));
+
   return (
     <>
-      <Body pageBody={pageBody} />
-      <nav>
-        <ul><a href="https://www.youtube.com/">Youtube</a></ul>
-        <ul><a href="https://www.facebook.com/">Facebook</a></ul>
-      </nav>
+      <Body className="bodyMainStyle" body={body} />
+      <BlogPost />
+      <nav>{mapedLinks}</nav>
+      <footer>Gaston Bortoli</footer>
     </>
   );
 };
