@@ -39,7 +39,7 @@ const Practica3 = () => {
 
   return (
     <div>
-      <h3>Práctica</h3>
+      <h3>Practica 3</h3>
       <input
         type="text"
         value={itemArray}
@@ -56,3 +56,5 @@ const Practica3 = () => {
     </div>
   );
 };
+
+export default Practica3;
