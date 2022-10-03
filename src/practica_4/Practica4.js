@@ -1,21 +1,63 @@
-import { useRef } from "react";
+import { useState } from "react";
 
-export default function Practica4 () {
-    const inputRef = useRef();
+const Practica4 = () => {
+    const [inputValue,setInputValue]= useState(Math.round(Math.random()));
+    const [checkboxValue,setCheckboxValue] = useState();
+    const [output,setOutput] = useState();
+
+    // valor del input y asignar el valor al state
+    const inputValueHandler = (e) => {
+        let aux = e.target.value === 1 ? 1 : 0 ;
+        setInputValue(aux)
+    };
+
+    // captar el valor del checkbox y asignar el valor al state 
+    const checkboxHandler = (e) => {
+        let aux = e.target.value ? 1 : 0 ;
+        setCheckboxValue(aux)
+    };
+
+    const selectHandler = (e) => {
+        let aux = e.target.value;
+        console.log(aux)
+
+        switch(aux){
+            case "OR":
+                setOutput(Boolean(inputValue || checkboxValue).toString())
+                break;
+                case "AND":
+                setOutput(Boolean(inputValue || checkboxValue).toString())
+                break;   
+                case "NAND":
+                setOutput(Boolean(inputValue || checkboxValue).toString())
+                break; 
+                case "NOR":
+                setOutput(Boolean(inputValue || checkboxValue).toString())
+                break;
+                case "XOR":
+                setOutput(Boolean((inputValue && !checkboxValue) || ( !inputValue && checkboxValue )).toString())
+                break;
+                default: ;
+        }
+    }
+
     return (
-        <div className="App">
-            <div>
-                <label for="input1">Entrada 1:</label>
-                <input type="number" id="input1" />
-            </div>
-            <div>
-                <label><input type="checkbox" /> Entrada 2</label>
-            </div>
-                <div>
-                <label for="selectGate">Compuerta lógica:</label>
-                <select id="selectGate"></select>
-            </div>
-            <div><span>Salida: { /* aca iria el resultado*/ }</span></div>
+        <div>
+            <input placeholder={inputValue} onChange={inputValueHandler}/>
+            <input type="checkbox" onChange={checkboxHandler}/>
+            <select onChange={selectHandler}>
+                <option disabled>select</option>
+                <option value="OR">OR</option>
+                <option value="AND">AND</option>
+                <option value="NAND">NAND</option>
+                <option value="NOR">NOR</option>
+                <option value="XOR">XOR</option>
+            </select>
+        
+            <p>{output}</p>
         </div>
+
     );
 }
+
+export default Practica4;
