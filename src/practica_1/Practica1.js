@@ -119,17 +119,14 @@ const watchList = [
 ];
 
 const returnMovieTitle = (watchlist) => {
-  const movies = watchList
+  return watchlist
     .filter(
-      (el) => el.Director === "Christopher Nolan" && Number(el.imdbRating) >= 8
+      (elemt) =>
+        elemt.Director === "Christopher Nolan" &&
+        parseFloat(elemt.imdbRating) > 8.0
     )
-    .map((el) => {
-      return { name: el.Title };
-    });
-  return movies;
+    .map((item) => item.Title);
 };
-
-console.log(returnMovieTitle(watchList));
 
 export default function Practica1() {
   let titlesArray = returnMovieTitle(watchList);
