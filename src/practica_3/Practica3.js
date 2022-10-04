@@ -27,7 +27,7 @@ export default function Practica3() {
             <div> es numero par </div>
           )}
           {!isNaN(Number(item)) && Math.round(item) % 2 !== 0 && (
-            <div> es numero impar</div>
+            <div> {item} es numero impar</div>
           )}
           {isNaN(Number(item)) && <input value={item} />}
         </div>
