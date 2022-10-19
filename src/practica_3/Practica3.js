@@ -14,6 +14,19 @@ export default function Practica3() {
       setInputValue("");
     }
   };
+
+  const removItem = (index) => {
+    let coppyArray = [...array];
+    setArray(array.splice(index, 1));
+    setArray(coppyArray);
+  };
+
+  /*const onEditItemHandler = (index, newValue) => {
+    let coppyArray = [...array];
+    coppyArray[index] = newValue;
+    setArray(coppyArray);
+  };
+*/
   return (
     <div>
       <h3>Práctica 3</h3>
@@ -24,12 +37,16 @@ export default function Practica3() {
       {array.map((item, index) => (
         <div key={index}>
           {!isNaN(Number(item)) && Math.round(item) % 2 === 0 && (
-            <div> es numero par </div>
+            <span> es numero par </span>
           )}
+
           {!isNaN(Number(item)) && Math.round(item) % 2 !== 0 && (
-            <div> {item} es numero impar</div>
+            <span> {item} es numero impar</span>
           )}
           {isNaN(Number(item)) && <input value={item} />}
+
+          <button onClick={removItem.bind(null, index)}> Borrar </button>
+          <button> Editar </button>
         </div>
       ))}
     </div>
