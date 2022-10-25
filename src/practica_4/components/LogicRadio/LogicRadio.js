@@ -3,7 +3,7 @@ const LogicRadio = ({ saveRadio }) => {
     <>
       <label>Entrada 2:</label>
       <div>
-        <label for="radioCheck0">0 </label>
+        <label htmlFor="radioCheck0">0 </label>
         <input
           name="radioCheck"
           type="radio"
@@ -13,7 +13,7 @@ const LogicRadio = ({ saveRadio }) => {
         />
       </div>
       <div>
-        <label for="radioCheck1">1 </label>
+        <label htmlFor="radioCheck1">1 </label>
         <input
           name="radioCheck"
           type="radio"
