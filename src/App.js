@@ -1,7 +1,6 @@
 
 import './App.css';
 import Menu from './Menu';
-import { useState } from 'react';
 import MainContent from './MainContent';
 import { PracticeProvider } from './ContextMenu';
 
