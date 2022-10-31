@@ -123,9 +123,20 @@ const watchList = [
 	},
 ];
 
-const returnMovieTitle = (watchlist) => {
+const returnMovieTitle = ( ) => {
+	
+	return watchList.filter(
+		movie => movie.Director === 'Christopher Nolan' && Number(movie.imdbRating) > 8.0
+	).map(movie => movie.Title )
     // Aquí adentro escriban la función
 }
+ // condición ? si es verdadera  : sino
+
+
+let variable = watchList.length <= 0 ? "tiene valores" : "no tiene valores";
+
+console.log(variable)
+
 export default function Practica1 () {
     let titlesArray = returnMovieTitle(watchList);
     console.log(titlesArray);
