@@ -1,57 +1,84 @@
 import { useState } from "react";
 
-import { calcLogicGate } from "./helpers";
+import LogicGates from "./LogicGates";
+import InputOne from "./Inputs/InputOne";
+import Checkbox from "./Inputs/Checkbox";
+import Range from "./Inputs/Range";
+import Radio from "./Inputs/Radio";
 
-export default function Practica4 () {
 
-    const randomValue = Math.round(Math.random());
+export default function Practica4() {
+  const randomValue = Math.round(Math.random());
+  const [inputOneValue, setInputOneValue] = useState(randomValue);
 
-    const [inputOneValue, setInputOneValue] = useState(randomValue);
+  const [checkboxValue, setCheckboxValue] = useState(false);
 
-    const [checkboxValue, setCheckboxValue] = useState(false);
+  const [rangeValue, setRangeValue] = useState(0);
 
-    const [selectValue, setSelectValue] = useState();
+  const [radioValue, setRadioValue] = useState(0);
 
-    const onChangeInput = (event) => {
-        if (event.target.value !== '1') {
-            setInputOneValue(0);
-        } else {
-            setInputOneValue(1);
-        }
-    }
+  const [resultOne, setResultOne] = useState("");
+  const [resultTwo, setResultTwo] = useState("");
+  const [resultThree, setResultThree] = useState("");
 
-    const onChangeCheckbox = (event) => {
-        if (event.target.checked === true) {
-            setCheckboxValue(1);
-        }
-        else{
-            setCheckboxValue(0);
-        }
-    }
+  const inputValueHandler = (e) => {
+    parseInt(e.target.value) === 1 ? setInputOneValue(1) : setInputOneValue(0);
+  };
 
-    const onChangeSelect = (event) => {
-        setSelectValue(event.target.value);
-    }
+  const checkboxValueHandler = (e) => {
+    e.target.checked === true ? setCheckboxValue(1) : setCheckboxValue(0);
+  };
 
-    return (
-        <div className="App">
-            <div>
-                <label for="input1">Entrada 1:</label>
-                <input type="number" id="input1" onChange={onChangeInput} value={inputOneValue}/>
-            </div>
-            <div>
-                <label><input type="checkbox" onChange={onChangeCheckbox} checked={checkboxValue}/> Entrada 2</label>
-            </div>
-                <div>
-                <label for="selectGate">Compuerta lógica:</label>
-                <select id="selectGate" onChange={onChangeSelect}>
-                    <option value='OR'>OR</option>
-                    <option value='AND'>AND</option>
-                    <option value='NOR'>NOR</option>
-                    <option value='NAND'>NAND</option>
-                </select>
-            </div>
-            <div><span>Salida: {calcLogicGate(inputOneValue, checkboxValue, selectValue)}</span></div>
-        </div>
-    );
+  const rangeValueHandler = (e) => {
+    parseInt(e.target.value) === 1 ? setRangeValue(1) : setRangeValue(0);
+  };
+
+  const radioValueHandler = (e) => {
+    parseInt(e.target.value) === 1 ? setRadioValue(1) : setRadioValue(0);
+  };
+
+  const saveFirstResult = (result) => {
+    setResultOne(result);
+  };
+
+  const saveSecondResult = (result) => {
+    setResultTwo(result);
+  };
+
+  const saveThirdResult = (result) => {
+    setResultThree(result);
+  };
+
+  return (
+    <section>
+      <div>
+        <InputOne saveInputValue={inputValueHandler}/>
+        <Checkbox saveCheckbox={checkboxValueHandler}/>
+        <LogicGates
+          inputOne={inputOneValue}
+          inputTwo={checkboxValue}
+          saveResult={saveFirstResult}
+        />
+        <span>Salida: {resultOne}</span>
+      </div>
+      <div>
+        <Range saveRange={rangeValueHandler} />
+        <Radio saveRadio={radioValueHandler} />
+        <LogicGates
+          inputOne={rangeValue}
+          inputTwo={radioValue}
+          saveResult={saveSecondResult}
+        />
+        <span>Salida: {resultTwo}</span>
+      </div>
+      <div>
+        <LogicGates
+          inputOne={resultOne}
+          inputTwo={resultTwo}
+          saveResult={saveThirdResult}
+        />
+        <span>Salida entre ambas logicGates: {resultThree}</span>
+      </div>
+    </section>
+  );
 }
