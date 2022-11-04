@@ -1,9 +1,7 @@
-import site from '../Practica2'
-
-const Body = ({body}) => {
+const Body = ({ body, className }) => {
   return (
-    <div>{body}</div>
+    <div className={className}>{body}</div>
   )
 }
 
-export default Body
+export default Body;

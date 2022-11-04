@@ -1,8 +1,12 @@
+import BlogPost from "./BlogPost/BlogPost"
 import Body from "./Body"
 
-const Main = ({pageBody, links}) => {
+import './MainBodyStyle.css'
+
+const Main = ({body, links}) => {
   return (
-    <div>
+    <>
+        <Body body = {body} className='main-body'/>
         <nav>
             <ul>
                 { (links || []).map((item, index) => (
@@ -12,11 +16,15 @@ const Main = ({pageBody, links}) => {
                 )) }
             </ul>
         </nav>
-        <Body body = {pageBody}/>
+        <BlogPost
+            title="Informática y educación: la novedosa propuesta de la UNLP para fortalecer la alfabetización
+            "
+            body="La Facultad de Informática de la UNLP se encuentra desarrollando juegos educativos digitales para fortalecer diferentes facetas educativas para los más chicos."
+        />
         <footer>
-            <p>Sitio creado para la práctica de Laboratorio de Computación III</p>
+            <h2>Programando con React</h2>
         </footer>
-    </div>
+    </>
     
   )
 }

@@ -1,9 +1,7 @@
-export default function Title ({ title, classname }) { // (props)
+const Title = ({ title, className }) => {
   return (
-    <h1 className={classname}>{ title }</h1>
+    <h1 className={className}>{ title }</h1>
   )
 }
 
-export const getTitle = () => {
-  return 'Hola;';
-}
+export default Title;

@@ -1,5 +1,6 @@
+import Header from './components/Header';
 import Main from './components/Main';
-import Title from './components/Title';
+import Page from './components/Page';
 
 
 const site = {
@@ -15,8 +16,10 @@ const links = [
 export default function Practica2 () {
     return (
         <div>
-            <Title title={site.pageTitle}/>
-            <Main pageBody={site.pageBody} links={links}/>
+            <Page>
+                <Header title={site.pageTitle}/>
+                <Main body={site.pageBody} links={links}/>
+            </Page>
         </div>
     );
 }
