@@ -139,7 +139,7 @@ const returnMovieTitle = (watchList) => {
 
 export default function Practica1 () {
     let titlesArray = returnMovieTitle(watchList);
-    /* console.log(titlesArray); */
+    console.log(titlesArray);
     if (!Array.isArray(titlesArray)) {
         titlesArray = [];
     }
@@ -154,6 +154,3 @@ export default function Practica1 () {
         </div>
     )
 } 
-
-// 
-// 
