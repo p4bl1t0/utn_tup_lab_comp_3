@@ -5,7 +5,7 @@ import Practica2 from './practica_2/Practica2';
 import Practica3 from './practica_3/Practica3';
 import Practica4 from './practica_4/Practica4';
 
-export default function MainContent () {
+export default function MainContent () { 
     const { selectedPractice } = usePractice();
     return (
         <main>

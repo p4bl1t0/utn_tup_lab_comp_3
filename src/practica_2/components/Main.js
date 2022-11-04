@@ -22,7 +22,7 @@ const Main = ({body, links}) => {
             body="La Facultad de Informática de la UNLP se encuentra desarrollando juegos educativos digitales para fortalecer diferentes facetas educativas para los más chicos."
         />
         <footer>
-            <h2>Programando con React</h2>
+            <h2>Programando con React </h2>
         </footer>
     </>
     

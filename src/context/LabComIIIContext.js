@@ -8,7 +8,7 @@ export const usePractice = () => {
 };
 
 export const PracticeProvider = ({ children }) => {
-  const [selectedPractice, setSelectedPractice] = useState("#practica_1");
+  const [selectedPractice, setSelectedPractice] = useState("#practica_1" );
 
   const onChangePractice = (event) => {
     setSelectedPractice(event);

@@ -3,7 +3,7 @@ import { usePractice } from "./context/LabComIIIContext";
 export default function Menu ({ onOptionSelected }) {
     const { onChangePractice } = usePractice();
 
-    const onClickOptionHandler = (practice) => {
+    const onClickOptionHandler = (practice) => { 
         onChangePractice(practice);
     };
     return (

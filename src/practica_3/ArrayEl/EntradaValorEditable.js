@@ -5,7 +5,7 @@ export default function EntradaValorEditable ({ value, onEdit }) {
     const onValueChange = (event) => {
         setInternalValue(event.target.value);
     }
-    const onEditClick = () => {
+    const onEditClick = () => { 
         onEdit(internalValue);
     }
     return (

@@ -1,7 +1,7 @@
 const Radio = ({ saveRadio }) => {
     return (
       <>
-        <label>Entrada 2:</label>
+        <label>Entrada 2: </label>
         <div>
           <label htmlFor="radioCheck1">0</label>
           <input

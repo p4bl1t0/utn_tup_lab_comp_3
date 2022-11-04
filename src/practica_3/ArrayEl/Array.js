@@ -6,7 +6,7 @@ const Array = ({ array, deleteArrayItem, changeArrayItem }) => {
   };
 
   return array.map((item, index) => {
-    if (!isNaN(item) && !isNaN(parseFloat(item))) {
+    if (!isNaN(item) && !isNaN(parseFloat(item))) { 
       let evenOdd = Math.round(parseFloat(item)) % 2 === 0 ? "Par" : "Impar";
       return (
         <div key={index}>

@@ -77,7 +77,7 @@ export default function Practica4() {
           inputTwo={resultTwo}
           saveResult={saveThirdResult}
         />
-        <span>Salida entre ambas logicGates: {resultThree}</span>
+        <span>Salida final entre ambas logicGates: {resultThree}</span>
       </div>
     </section>
   );

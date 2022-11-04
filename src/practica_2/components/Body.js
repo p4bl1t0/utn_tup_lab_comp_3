@@ -1,6 +1,6 @@
 const Body = ({ body, className }) => {
   return (
-    <div className={className}>{body}</div>
+    <div className={className}>{body} </div>
   )
 }
 

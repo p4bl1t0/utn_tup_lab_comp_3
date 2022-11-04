@@ -6,6 +6,6 @@ export default function Practica3() {
     <div>
       <h3>Práctica 3</h3>
       <Input/>
-    </div>
+    </div> 
   );
 }

@@ -3,7 +3,7 @@ import Menu from './Menu';
 import MainContent from './MainContent';
 import { PracticeProvider } from './context/LabComIIIContext';
 
-function App() {
+function App(){
   return (
     <div>
       <PracticeProvider>

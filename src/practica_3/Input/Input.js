@@ -6,7 +6,7 @@ const Input = () => {
   const [arraySave, setArraySave] = useState([]);
 
   const changeTextHandler = (event) => {
-    setEnteredText(event.target.value);
+    setEnteredText(event.target.value); 
   };
 
   const clickButtonHandler = () => {

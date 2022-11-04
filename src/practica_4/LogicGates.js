@@ -41,7 +41,7 @@ const LogicGates = ({ inputOne, inputTwo, saveResult }) => {
         <option value={"NAND"}>NAND</option>
         <option value={"XOR"}>XOR</option>
       </select>
-      <button onClick={operationResult}>Calcular</button>
+      <button onClick={operationResult}>Calcular resultado</button>
     </div>
   );
 };

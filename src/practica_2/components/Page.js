@@ -1,4 +1,4 @@
-export default function Page ( { children } ) { // props.children
+export default function Page ( { children } ) {
     return (
         <div>
             { children }
