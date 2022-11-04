@@ -16,7 +16,7 @@ const MapArray = ({ array, setArray }) => {
           <Delete array={array} setArray={setArray} index={index} />
         </div>
       ))}
-      <p>Array control: {array.toString()}</p>
+      <p>Array control: {JSON.stringify(array)}</p>
     </>
   );
 };
