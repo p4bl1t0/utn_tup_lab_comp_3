@@ -37,7 +37,7 @@ export default function Practica4() {
     parseInt(e.target.value) === 1 ? setRadioValue(1) : setRadioValue(0);
   };
 
-  const saveFirstResult = (result) => {
+  const saveFirstResult = (result) => { 
     setResultOne(result);
   };
 
