@@ -26,12 +26,6 @@ Considerando el JSX brindado en `App.js`
 - Capturar el evento de cambio del contenido del `select` y mostrar el resultado de aplicar la puerta lógica seleccionada al valor del estado de `input1` y el de `checkbox` de  en el espacio reservado para tar fin
 - Bonus: Refactorizar la selección y el cálculo de la compuerta lógica como un componente.
 
-
-### Tarea 3
-- Capturar el evento de cambio del contenido del `select` y mostrar el resultado de aplicar la puerta lógica seleccionada al valor del estado de `input1` y el de `checkbox` de  en el espacio reservado para tar fin
-- Bonus: Refactorizar la selección y el cálculo de la compuerta lógica como un componente.
-
-
 ### Tarea 4
 - Refactorizar la selección y el cálculo de la compuerta lógica como un componente llamado `LogicGates`
 - Refactorizar `input1` y `checkbox` como componentes apartes, capturar su cambio de valor y pasarselo al componente `LogicGates` para su cálculo.

@@ -4,7 +4,7 @@ import Form from "./components/Form";
 
 const Practica3 = ()=>{
     const [array,setArray] = useState([]);
-    const [itemArray,setItemArray] = useState();
+    const [itemArray,setItemArray] = useState("");
     
     //Función para setaer el valor de 'itemArray'
     const pushContentHandler = (event) =>{

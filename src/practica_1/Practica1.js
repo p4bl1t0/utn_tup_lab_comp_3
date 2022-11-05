@@ -122,7 +122,6 @@ const watchList = [
 ];
 
 
-
 const returnMovieTitle = (watchlist) => {
 	return watchlist.filter((elemt)=> elemt.Director === 'Christopher Nolan' && parseFloat(elemt.imdbRating) > 8.0).map((item)=>item.Title);
 }
@@ -148,6 +147,3 @@ export default function Practica1 () {
         </div>
     )
 } 
-
-// 
-// 

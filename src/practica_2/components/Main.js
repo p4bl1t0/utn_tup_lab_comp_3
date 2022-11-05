@@ -3,7 +3,7 @@ import BlogPost from './BlogPost';
 import Body from './Body';
 import './StylesGeneral.css'
 
-const Main = ({pageBody,links,pageTitle}) => {
+const Main = ({pageBody,links}) => {
   
     return (
         <>
@@ -15,7 +15,7 @@ const Main = ({pageBody,links,pageTitle}) => {
         <div className='bodyMain'>
             <Body body={pageBody}/>
         </div>
-        <BlogPost body={"cuerpo de noticia hardcodeado"} title={"go to switch"}/>
+        <BlogPost body={"accidente en la ruta 012 provoca corte de la circulación de vehiculos desde las 09:00 am"} title={"Trafico atascado en la O12"}/>
         <p>All you people in the house<br></br>Get up and scream and shout<br></br>Say hey hey hey</p>    
         </>
     )

@@ -1,62 +1,27 @@
 import { useState } from "react";
 
+import LogicGates from "./LogicGates";
+import Input1 from "./Input1";
+import CheckBox from "./CheckBox";
+
 const Practica4 = () => {
 
-    const [inputValue,setInputValue] = useState(Math.round(Math.random()));
-    const [checkboxValue,setCheckboxValue] = useState();
-    const [output,setOutput] = useState();
-
-    //Función para captar el valor del input y asignarle el valor al state 
-    const inputValueHandler = (e) => {
-        let aux =  e.target.value == 1 ? 1 : 0 ;
-        setInputValue(aux)
+    const [inputValueFather,setInputValueFather] = useState()
+    const [checkboxValueFather,setCheckboxValueFather] = useState();
+    
+    const sentInputValue = (arg) =>{
+        setInputValueFather(arg)
     }
 
-    //Función para captar el valor del checkbox y asignarle el valor al state 
-    const checkboxHandler = (e) => {
-        let aux = e.target.checked ? 1 : 0 ;
-        setCheckboxValue(aux)
-    }
-
-    const selectHandler = (e) => {
-        let aux = e.target.value; 
-        console.log(aux)
-
-        switch(aux){
-            case "OR": 
-                setOutput(Boolean(inputValue || checkboxValue).toString())
-                break;
-            case "AND": 
-                setOutput(Boolean(inputValue && checkboxValue).toString())
-                break;
-            case "NAND": 
-                setOutput(Boolean(!(inputValue && checkboxValue)).toString())
-                break;
-            case "NOR": 
-                setOutput(Boolean(!(inputValue || checkboxValue)).toString())
-                break;
-            case "XOR": 
-                setOutput(Boolean(( inputValue && !checkboxValue ) || ( !inputValue && checkboxValue )).toString())
-                break;
-
-            default:  ; 
-        }
-
+    const sentCheckboxValue = (arg) => {
+        setCheckboxValueFather(arg)
     }
 
     return (
         <div>
-            <input placeholder={inputValue} onChange={inputValueHandler}/>
-            <input type="checkbox" onChange={checkboxHandler}/>
-            <select onChange={selectHandler}>
-                <option disabled>select</option>
-                <option value="OR">OR</option>
-                <option value="AND">AND</option>
-                <option value="NAND">NAND</option>
-                <option value="NOR">NOR</option>
-                <option value="XOR">XOR</option>
-            </select>
-            <p>{output/*aqui mostraremos el resultado de las salidas logicas*/}</p>
+            <Input1 sentInputValue={sentInputValue}/>
+            <CheckBox sentCheckBoxValue={sentCheckboxValue}/>
+            <LogicGates inputValue={inputValueFather} checkboxValue={checkboxValueFather} />
         </div>
     );
 

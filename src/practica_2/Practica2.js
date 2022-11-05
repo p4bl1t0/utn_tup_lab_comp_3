@@ -12,10 +12,7 @@ const links = ['https://juaanig.github.io/cotiz.github.io/','https://www.w3schoo
 export default function Practica2 () {
     return (
         <div>
-            <Page>
-                <Header pageTitle={site.pageTitle}/>
-                <Main pageBody={site.pageBody} links={links} pageTitle={site.pageTitle}/>
-            </Page>
+            <Page pageTitle={site.pageTitle} pageBody={site.pageBody} links={links}/>
         </div>
     );
 }
