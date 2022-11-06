@@ -19,7 +19,7 @@ const Main = ({ pageBody, links }) => {
 
       <BlogPost />
       <footer>
-        <p>Practica Lab de computación III</p>
+        <p>Practica Lab de computación III </p>
       </footer>
     </div>
   );
