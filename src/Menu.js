@@ -1,7 +1,13 @@
-export default function Menu ({ onOptionSelected }) {
+import P5Context from "./practica_5/p5Context";
+import { useContext } from "react";
+
+export default function Menu () {
+
+    const {setPracticeSelected} = useContext(P5Context);
+
     const onClickOptionHandler = (event) => {
         event.preventDefault();
-        onOptionSelected(event.target.hash);
+        setPracticeSelected(event.target.hash);
     };
     return (
         <div>

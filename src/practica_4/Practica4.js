@@ -33,6 +33,7 @@ const Practica4 = () => {
             <input value={input1Value} onChange={inputValueHandler}/>
             <input type="checkbox" onChange={checkboxHandler}/>
             <select onChange={selectLogicHandler}>
+                <option disabled selected>option</option>
                 <option value="OR">OR</option>
                 <option value="AND">AND</option>
                 <option value="NAND">NAND</option>
