@@ -1,78 +1,53 @@
 import { useState } from "react";
+import Checkbox from "./components/Checkbox";
+import Input1 from "./components/Input1";
+import InputRadio from "./components/InputRadio.js";
+import InputRange from "./components/InputRange";
+import LogicGates from "./components/LogicGates";
+import "./Practica4.css";
 
 export default function Practica4() {
-  //const inputRef = useRef();
-
   const valueRandom = Math.round(Math.random());
   const [input1Value, setInput1Value] = useState(valueRandom);
-  const input1Handler = (value) => {
-    value !== "1" ? setInput1Value(0) : setInput1Value(1);
-  };
-
   const [inputCheckbox, setInputCheckbox] = useState(0);
-  const handlerInputCheckbox = (event) => {
-    setInputCheckbox(event.target.checked ? 1 : 0);
-  };
-
-  const [inputSelect, setInputSelect] = useState("OR");
-
-  const output = (input1Value, inputCheckbox, inputSelect) => {
-    switch (inputSelect) {
-      case "OR":
-        return input1Value || inputCheckbox ? 1 : 0;
-      case "AND":
-        return input1Value && inputCheckbox ? 1 : 0;
-      case "NAND":
-        return !(input1Value && inputCheckbox) ? 1 : 0;
-      case "NOR":
-        return !(input1Value || inputCheckbox) ? 1 : 0;
-      case "XOR":
-        return input1Value || !inputCheckbox || !input1Value || inputCheckbox
-          ? 1
-          : 0;
-      default:
-        break;
-    }
-  };
-
+  const [inputRange, setInputRange] = useState(0);
+  const [inputRadio, setInputRadio] = useState(0);
+  const [resultLogicGates1, setResultLogicGates1] = useState();
+  const [resultLogicGates2, setResultLogicGates2] = useState();
+  const [resultLogicGatesTotal, setresultLogicGatesTotal] = useState();
   return (
-    <div className="App">
-      <div>
-        <label for="input1">Entrada 1:</label>
-        <input
-          type="number"
-          id="input1"
-          value={input1Value}
-          onChange={(event) => input1Handler(event.target.value)}
+    <div className="sectionCards">
+      <section className="card">
+        <h2>Cálculo 1:</h2>
+        <Input1 input1Value={input1Value} setInput1Value={setInput1Value} />
+        <Checkbox
+          inputCheckbox={inputCheckbox}
+          setInputCheckbox={setInputCheckbox}
         />
-      </div>
-      <div>
-        <label>
-          <input
-            type="checkbox"
-            checked={inputCheckbox}
-            onChange={handlerInputCheckbox}
-          />
-          Entrada 2:
-        </label>
-      </div>
-      <div>
-        <label for="selectGate">Compuerta lógica: {inputSelect}</label>
-        <select
-          id="selectGate"
-          value={inputSelect}
-          onChange={(event) => setInputSelect(event.target.value)}
-        >
-          <option value={"OR"}>OR</option>
-          <option value={"AND"}>AND</option>
-          <option value={"NAND"}>NAND</option>
-          <option value={"NOR"}>NOR</option>
-          <option value={"XOR"}>XOR</option>
-        </select>
-      </div>
-      <div>
-        <span>Salida: {output(input1Value, inputCheckbox, inputSelect)}</span>
-      </div>
+        <LogicGates
+          input1={input1Value}
+          input2={inputCheckbox}
+          result={setResultLogicGates1}
+        />
+      </section>
+      <section className="card">
+        <h2>Cálculo 2:</h2>
+        <InputRange inputRange={inputRange} setInputRange={setInputRange} />
+        <InputRadio inputRadio={inputRadio} setInputRadio={setInputRadio} />
+        <LogicGates
+          input1={inputRange}
+          input2={inputRadio}
+          result={setResultLogicGates2}
+        />
+      </section>
+      <section className="card">
+        <h2>Cálculo con las dos primeras salidas: </h2>
+        <LogicGates
+          input1={resultLogicGates1}
+          input2={resultLogicGates2}
+          result={setresultLogicGatesTotal}
+        />
+      </section>
     </div>
   );
 }

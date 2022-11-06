@@ -8,8 +8,7 @@ const site = {
   pageBody: "Implementación de árbol de componentes y propiedades en React.",
 };
 
-const { pageTitle } = site;
-const { pageBody } = site;
+const { pageTitle, pageBody } = site;
 
 const pages = [
   { title: "Youtube", link: "https://www.youtube.com/" },

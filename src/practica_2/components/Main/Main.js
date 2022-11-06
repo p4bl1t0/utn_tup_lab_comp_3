@@ -4,8 +4,8 @@ import Body from "../Body";
 import "./Main.css";
 
 const Main = ({ body, pages }) => {
-  const mapedLinks = pages.map((item) => (
-    <ul>
+  const mapedLinks = pages.map((item, index) => (
+    <ul key={index}>
       <a href={item.link}>{item.title}</a>
     </ul>
   ));

@@ -1,0 +1,56 @@
+.sectionCards{
+    display: flex;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.card>*{
+    padding: 0;
+    margin: 0;
+}
+.card>h3{
+    text-align: center;
+}
+
+.card{
+    padding: 20px;
+    border-radius: 20px;
+    width: 300px;
+    height: 250px;
+    background-color: #364552;
+    font-family: sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.output{
+    background-color: #efefef;
+    color: black;
+    width: 100%;
+    padding: 10px 0px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+table{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+.calc1{
+    text-align: left;
+}
+
+.inputRadio{
+    display: flex;
+    flex-direction: column;
+}
+
+.logicGate{
+    font-size: 18px;
+}
