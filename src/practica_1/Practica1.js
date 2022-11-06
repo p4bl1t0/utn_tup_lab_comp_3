@@ -119,15 +119,17 @@ const watchList = [
 ];
 
 const returnMovieTitle = (watchList) => {
-  var movieTitles = watchList.map((movie) => {
-    if (movie.imdbRating > 8.0 && movie.Director === "Christopher Nolan") {
-      return movie.Title;
-    } else {
-      return null;
-    }
-  });
+  var movieTitles = watchList
+    .map((movie) => {
+      if (movie.imdbRating > 8.0 && movie.Director === "Christopher Nolan") {
+        return movie.Title;
+      } else {
+        return null;
+      }
+    })
+    .filter(Boolean);
 
-  return movieTitles.filter(Boolean);
+  return movieTitles;
 };
 
 export default function Practica1() {
