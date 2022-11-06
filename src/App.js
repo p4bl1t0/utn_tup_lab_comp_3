@@ -1,21 +1,18 @@
+import { useState } from "react";
 import "./App.css";
 import Menu from "./Menu";
-import { useState } from "react";
 import MainContent from "./MainContent";
+import { PractProvider} from  './practica_5/PractContext';
 
 function App() {
-  const [practiceSelected, setPracticeSelected] = useState(
-    "#practica_1",
-    "#practica_2"
-  );
+  const[practiceSelected, setPracticeSelected] = useState('#practica_1');
+
   return (
     <div>
-      <Menu
-        onOptionSelected={(t) => {
-          setPracticeSelected(t);
-        }}
-      />
-      <MainContent practiceSelected={practiceSelected} />
+      <PractProvider>
+        <Menu onOptionSelected={(p) => { setPracticeSelected(p) }} />
+        <MainContent practiceSelected={practiceSelected} />
+      </PractProvider>
     </div>
   );
 }

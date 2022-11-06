@@ -6,12 +6,10 @@ const Practica3 = () => {
   const [array, setArray] = useState([]);
   const [itemArray, setItemArray] = useState();
 
-  // Setear el valor de itemArray
   const pushContentHandler = (event) => {
     setItemArray(event.target.value);
   };
 
-  // agregar los elementos del arreglo
   const dataInputHandler = (event) => {
     event.preventDefault();
     if (itemArray !== "") {
@@ -20,17 +18,13 @@ const Practica3 = () => {
     setItemArray("");
   };
 
-  // eliminar los elementos del arreglo
   const deleteElement = (index) => {
     let copyArray = [...array];
     copyArray.splice(index, 1);
     setArray(copyArray);
   };
 
-  // editar los elementos del arreglo
   const onEditHandler = (index, newValue) => {
-    const onEditHandler = (index, newValue);
-
     let copyArray = [...array];
     copyArray[index] = newValue;
     setArray(copyArray);

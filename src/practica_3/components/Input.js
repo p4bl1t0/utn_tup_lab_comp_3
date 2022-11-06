@@ -10,10 +10,7 @@ const Input = ({ item, onEdit, index }) => {
 
   return (
     <>
-      <input
-        type="text"
-        placeholder="{item} onChange={valueEditHandler}"
-      ></input>
+      <input type="text" placeholder={item} onChange={valueEditHandler}></input>
       <button
         onClick={(e) => {
           onEdit(index, valueEdited);

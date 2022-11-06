@@ -1,64 +1,29 @@
 import { useState } from "react";
 
+import LogicGates from "./LogicGates";
+import Input1 from "./Input1";
+import CheckBox from "./CheckBox";
+
 const Practica4 = () => {
-  const [inputValue, setInputValue] = useState(Math.round(Math.random()));
-  const [checkboxValue, setCheckboxValue] = useState();
-  const [output, setOutput] = useState();
+  const [inputValueFather, setInputValueFather] = useState();
+  const [checkboxValueFather, setCheckboxValueFather] = useState();
 
-  // valor del input y asignar el valor al state
-  const inputValueHandler = (e) => {
-    let aux = e.target.value === 1 ? 1 : 0;
-    setInputValue(aux);
+  const sentInputValue = (lc) => {
+    setInputValueFather(lc);
   };
 
-  // captar el valor del checkbox y asignar el valor al state
-  const checkboxHandler = (e) => {
-    let aux = e.target.value ? 1 : 0;
-    setCheckboxValue(aux);
-  };
-
-  const selectHandler = (e) => {
-    let aux = e.target.value;
-    console.log(aux);
-
-    switch (aux) {
-      case "OR":
-        setOutput(Boolean(inputValue || checkboxValue).toString());
-        break;
-      case "AND":
-        setOutput(Boolean(inputValue || checkboxValue).toString());
-        break;
-      case "NAND":
-        setOutput(Boolean(inputValue || checkboxValue).toString());
-        break;
-      case "NOR":
-        setOutput(Boolean(inputValue || checkboxValue).toString());
-        break;
-      case "XOR":
-        setOutput(
-          Boolean(
-            (inputValue && !checkboxValue) || (!inputValue && checkboxValue)
-          ).toString()
-        );
-        break;
-      default:
-    }
+  const sentCheckboxValue = (lc) => {
+    setCheckboxValueFather(lc);
   };
 
   return (
     <div>
-      <input placeholder={inputValue} onChange={inputValueHandler} />
-      <input type="checkbox" onChange={checkboxHandler} />
-      <select onChange={selectHandler}>
-        <option disabled>select</option>
-        <option value="OR">OR</option>
-        <option value="AND">AND</option>
-        <option value="NAND">NAND</option>
-        <option value="NOR">NOR</option>
-        <option value="XOR">XOR</option>
-      </select>
-
-      <p>{output}</p>
+      <Input1 sentInputValue={sentInputValue} />
+      <CheckBox sentCheckBoxValue={sentCheckboxValue} />
+      <LogicGates
+        inputValue={inputValueFather}
+        checkboxValue={checkboxValueFather}
+      />
     </div>
   );
 };
