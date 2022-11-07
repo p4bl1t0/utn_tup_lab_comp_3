@@ -1,4 +1,7 @@
 import { useState } from "react";
+import Checkbox from "./Checkbox";
+import Input1 from "./Input1";
+import LogicGates from "./LogicGates";
 
 const Practica4 = () => {
 
@@ -13,35 +16,13 @@ const Practica4 = () => {
         setInput2Value( event.target.checked ? 1 : 0 )
     }
 
-    const selectLogicHandler = (event) => {
-
-        if (event.target.value === "OR"){
-            setResultLogic(input1Value || input2Value)
-        } else if(event.target.value === "AND"){
-            setResultLogic(input1Value && input2Value)
-        } else if(event.target.value === "NAND"){
-            setResultLogic(!(input1Value && input2Value))
-        }else if (event.target.value === "NOR"){
-            setResultLogic(!(input1Value || input2Value))
-        } else if(event.target.value === "XOR"){
-            setResultLogic(( !input1Value && input2Value )||( input1Value && !input2Value))
-        }
-    }
-
     return (
-        <div>
-            <input value={input1Value} onChange={inputValueHandler}/>
-            <input type="checkbox" onChange={checkboxHandler}/>
-            <select onChange={selectLogicHandler}>
-                <option disabled selected>option</option>
-                <option value="OR">OR</option>
-                <option value="AND">AND</option>
-                <option value="NAND">NAND</option>
-                <option value="NOR">NOR</option>
-                <option value="XOR">XOR</option>
-            </select>
+        <>
+            <Input1 input1Value={input1Value} inputValueHandler={inputValueHandler}/>
+            <Checkbox checkboxHandler={checkboxHandler}/>
+            <LogicGates setResultLogic={setResultLogic} input1Value={input1Value} input2Value={input2Value}/>
             <p>{Boolean(resultLogic).toString()}</p>
-        </div>
+        </>
     );
 
 }
