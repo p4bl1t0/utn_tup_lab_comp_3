@@ -1,9 +1,10 @@
 import Title from "../Title/Title";
+import '../Header/Header.css'
 
-const Header = ({ pageTitle }) => {
+const Header = ({ title }) => {
   return (
     <header>
-      <Title pageTitle={pageTitle} />
+      <Title title={title} />
     </header>
   );
 };

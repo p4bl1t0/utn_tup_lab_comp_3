@@ -19,7 +19,7 @@ const site = {
 - Importar los componentes `Title` y `Body` desde `Practica2.js` y renderizarlos pasándose como propiedades sus respectivos valores de la constante `site`.
 - Bonus: utilizar `object destructuring` para leer las propiedades pasadas a los componentes como argumentos
 
-### Tarea 2:
+### Tarea 2: Realizado
 
 - Crear el componente `Header` que importará el componente `Title` y recibirá como propiedad `pageTitle`
 - Crear el componente `Main` que importará el componente `Body` y recibirá como propiedad `pageBody` y además renderizar una lista de menú (`nav` y `ul`) con enlaces a 2 sitios web externos.
@@ -27,7 +27,7 @@ const site = {
 - Bonus: Enviar los enlaces a sitio web externos como `props` enviadas a `Main`
 - Bonus: Utilizar la función `map` para renderizar los links
 
-### Tarea 3
+### Tarea 3: Realizado
 
 - Crear un componente `Page` de forma que acepte hijos (children) y los renderice de esa forma a los componente `Main` y `Header`
 - Refactorizar `App` para que importe y renderice `Page`, recordar enviarle que la constante site debe estar definida en `App` y enviarla a los distintos componentes via `props`.
