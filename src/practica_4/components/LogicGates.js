@@ -45,7 +45,7 @@ const LogicGates = ({ input1, input2, result }) => {
         </label>
       </div>
       <div className="output">
-        <span>Salida: {output(input1, input2, inputSelect)}</span>
+        <span>Resultado = {output(input1, input2, inputSelect)}</span>
       </div>
     </div>
   );

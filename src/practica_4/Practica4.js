@@ -43,7 +43,11 @@ export default function Practica4() {
         />
       </section>
       <section className="card">
-        <h2>Cálculo con las dos primeras salidas: </h2>
+        <h2>Cálculo con los dos primeros resultados: </h2>
+        <p>Resultado 1:</p>
+        <p>{resultLogicGates1}</p>
+        <p>Resultado 2:</p>
+        <p>{resultLogicGates2}</p>
         <LogicGates
           input1={resultLogicGates1}
           input2={resultLogicGates2}
