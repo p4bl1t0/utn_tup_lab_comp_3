@@ -4,18 +4,12 @@ import Numbers from './Numbers';
 const Input = () => {
 
     const [input, setInput] = useState('');
-
     const [addArray,setAddArray] = useState([]);
-
-    
 
     const ArrayAdded = () => {
         if (input !== ''){
             setAddArray([...addArray,input]);
             setInput("");
-        }
-        if (input === ''){
-            console.log("No se puede añadir un elemento vacio")
         }
     };
 
@@ -25,11 +19,13 @@ const Input = () => {
         setAddArray(backUp)   
     }
 
-    const editItem = (index) =>{
+    /*const editItem = (index) =>{
         let backUp = [...addArray]
-        backUp.splice(index,1,input)
-    }
+        backUp[index] =                         FALTA AÑADIR LA FUNCIONALIDAD DE EDICION
+        setAddArray(backUp)
+    }*/
    
+
   return (
     <>
         <p>Ingrese un texto:</p>

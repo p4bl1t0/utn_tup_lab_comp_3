@@ -1,8 +1,15 @@
-export default function Menu ({ onOptionSelected }) {
+import { useContext } from "react";
+import  {MenuContext} from "./practica_5/SelectMenuProvider";
+
+export default function Menu () {
+    
+    const {setPracticeSelected} = useContext(MenuContext);
+
     const onClickOptionHandler = (event) => {
         event.preventDefault();
-        onOptionSelected(event.target.hash);
+        setPracticeSelected(event.target.hash);
     };
+
     return (
         <div>
             <h1>TUP - UTN - Laboratorio de computación 3 - Práctica</h1>

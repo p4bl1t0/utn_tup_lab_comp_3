@@ -1,0 +1,13 @@
+
+section{
+    background-color: #F2DEBA;
+    height: 200px;
+    width: 180px;
+    border-radius: 3px;
+    border: solid black 1px;
+
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;  
+}

@@ -1,45 +1,67 @@
-import { useState,useRef } from "react";
+import { useState } from "react";
+import Input from "./components/Input";
+import Checkbox from "./components/Checkbox";
+import LogicGates from "./components/LogicGates";
+import Range from "./components/Range";
+import Radio from "./components/Radio";
+import "./Practica4.css";
 
-export default function Practica4 () {
+const Practica4 = () => {
+  const randomValue = Math.round(Math.random());
+  const [inputValue, setInputValue] = useState(randomValue);
+  const [checkboxValue, setCheckboxValue] = useState("");
 
-    const [input1,setInput1] = useState('');
-    const [checkbox1,setCheckBox1] = useState('');
+  const [resultValue1, setResultValue1] = useState("");
+  const [resultValue2, setResultValue2] = useState("");
+  const [resultValue3, setResultValue3] = useState("");
 
-    const input1Handler = (e) =>{
-        parseInt(e.target.value) === 1 ? setInput1(1) : setInput1(0);
-    }
+  const [rangeValue, setRangeValue] = useState("");
+  const [radioValue, setRadioValue] = useState("");
 
-    const checkbox1Handler = (e) =>{
-        parseInt(e.target.value) === true ? setCheckBox1(1) : setCheckBox1(0);
-    }
+  return (
+    <>
+      <section>
+        <Input inputValue={inputValue} setInputValue={setInputValue} />
+        <Checkbox
+          checkboxValue={checkboxValue}
+          setCheckboxValue={setCheckboxValue}
+        />
+        <LogicGates
+          input2={inputValue}
+          input1={checkboxValue}
+          setResult={setResultValue1}
+        />
 
-    //const inputRef = useRef();
-    
-    return (
-        <div className="App">
-            <div>
-                <label htmlFor="input1">Entrada 1:</label>
-                <input type="number" id="input1" value={input1} onChange={input1Handler} />
-            </div>
-
-            <div>
-                <label>
-                    <input type="checkbox" value={checkbox1} onChange={checkbox1Handler} /> Entrada 2:
-                </label>
-            </div>
-
-            <div>
-                <label htmlFor="selectGate">Compuerta lógica:</label>
-                <select id="selectGate"> OR </select>
-                <select id="selectGate"> AND </select>
-                <select id="selectGate"> NAND </select>
-                <select id="selectGate"> NOR </select>
-                <select id="selectGate"> XOR </select>                
-            </div>
-
-            <div>
-                <span>Salida: {  }</span>
-            </div>
+        <div>
+          <span> Resultado: {resultValue1} </span>
         </div>
-    );
-}
+      </section>
+
+      <section>
+        <Range rangeValue={rangeValue} setRangeValue={setRangeValue} />
+        <Radio radioValue={radioValue} setRadioValue={setRadioValue} />
+        <LogicGates
+          input2={radioValue}
+          input1={rangeValue}
+          setResult={setResultValue2}
+        />
+        <div>
+          <span> Resultado: {resultValue2} </span>
+        </div>
+      </section>
+
+      <section>
+        <LogicGates
+          input2={resultValue2}
+          input1={resultValue1}
+          setResult={setResultValue3}
+        />
+        <div>
+          <span> RESULTADO FINAL: {resultValue3} </span>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default Practica4;
