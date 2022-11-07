@@ -9,9 +9,9 @@ const Main = ({ pageBody, links, pageTitle }) => {
       <nav>
         <ul>
           {links ||
-            [].map((item) => (
-              <li>
-                <a href={item}> {item} </a>{" "}
+            [].map((item, index) => (
+              <li key={index}>
+                <a href={item}> {item} </a>
               </li>
             ))}
         </ul>
