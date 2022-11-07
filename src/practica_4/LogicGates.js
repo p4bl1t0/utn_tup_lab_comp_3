@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-const LogicGates = ({ inputOne, inputTwo, saveResult }) => {
-  const [selectedGate, setSelectedGate] = useState("AND");
+const LogicGates = ({ inputOne, inputTwo, holdResult }) => {
+  const [selectedOp, setSelectedOp] = useState("AND");
 
-  const selectGateHandler = (e) => {
-    setSelectedGate(e.target.value);
+  const onSelectOp = (e) => {
+    setSelectedOp(e.target.value);
   };
 
-  const operationResult = () => {
+  const opResult = () => {
     let result;
-    switch (selectedGate) {
+    switch (selectedOp) {
       case "OR":
         result = inputOne || inputTwo;
         break;
@@ -20,28 +20,28 @@ const LogicGates = ({ inputOne, inputTwo, saveResult }) => {
         result = !(inputOne || inputTwo) ? 1 : 0;
         break;
       case "NAND":
-        result = !(inputOne && inputTwo) ? 1 : 0;
+        result = !(inputOne && inputTwo) ? 1 : 0; 
         break;
       case "XOR":
         result = (inputOne && !inputTwo) || (!inputOne && inputTwo) ? 1 : 0;
         break;
       default:
-        break;
+        break; 
     }
-    saveResult(result);
+    holdResult(result);
   };
 
   return (
     <div>
-      <label htmlFor="selectGate">Compuerta lógica:</label>
-      <select id="selectGate" onChange={selectGateHandler}>
-        <option value={"OR"}>OR</option>
+      <label htmlFor="selectOp">Compuerta lógica:</label>
+      <select onChange={onSelectOp} id="selectOp">
+        <option value={"OR"}>OR</option> 
         <option value={"AND"}>AND</option>
         <option value={"NOR"}>NOR</option>
         <option value={"NAND"}>NAND</option>
-        <option value={"XOR"}>XOR</option>
+        <option value={"XOR"}>XOR</option> 
       </select>
-      <button onClick={operationResult}>Calcular resultado</button>
+      <button onClick={opResult}>Mostrar resultado</button>
     </div>
   );
 };

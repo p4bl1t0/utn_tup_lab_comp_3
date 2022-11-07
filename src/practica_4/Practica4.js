@@ -17,9 +17,9 @@ export default function Practica4() {
 
   const [radioValue, setRadioValue] = useState(0);
 
-  const [resultOne, setResultOne] = useState("");
-  const [resultTwo, setResultTwo] = useState("");
-  const [resultThree, setResultThree] = useState("");
+  const [firstResult, setFirstResult] = useState("");
+  const [secondResult, setSecondResult] = useState("");
+  const [thirdResult, setThirdResult] = useState("");
 
   const inputValueHandler = (e) => {
     parseInt(e.target.value) === 1 ? setInputOneValue(1) : setInputOneValue(0);
@@ -37,48 +37,38 @@ export default function Practica4() {
     parseInt(e.target.value) === 1 ? setRadioValue(1) : setRadioValue(0);
   };
 
-  const saveFirstResult = (result) => { 
-    setResultOne(result);
+
+
+  const holdFirstResult = (result) => { 
+    setFirstResult(result);
   };
 
-  const saveSecondResult = (result) => {
-    setResultTwo(result);
+  const holdSecondResult = (result) => {
+    setSecondResult(result);
   };
 
-  const saveThirdResult = (result) => {
-    setResultThree(result);
+  const holdThirdResult = (result) => {
+    setThirdResult(result);
   };
 
   return (
-    <section>
+    <div> 
       <div>
-        <InputOne saveInputValue={inputValueHandler}/>
-        <Checkbox saveCheckbox={checkboxValueHandler}/>
-        <LogicGates
-          inputOne={inputOneValue}
-          inputTwo={checkboxValue}
-          saveResult={saveFirstResult}
-        />
-        <span>Salida: {resultOne}</span>
+        <InputOne holdInputValue={inputValueHandler}/>
+        <Checkbox holdCheckboxValue={checkboxValueHandler}/> 
+        <LogicGates inputOne={inputOneValue} inputTwo={checkboxValue} holdResult={holdFirstResult}/>
+        <p>Salida: {firstResult}</p> 
       </div>
       <div>
-        <Range saveRange={rangeValueHandler} />
-        <Radio saveRadio={radioValueHandler} />
-        <LogicGates
-          inputOne={rangeValue}
-          inputTwo={radioValue}
-          saveResult={saveSecondResult}
-        />
-        <span>Salida: {resultTwo}</span>
+        <Range holdRangeValue={rangeValueHandler} />
+        <Radio holdRadioValue={radioValueHandler} />
+        <LogicGates inputOne={rangeValue} inputTwo={radioValue} holdResult={holdSecondResult}/>
+        <p>Salida: {secondResult}</p>
       </div>
       <div>
-        <LogicGates
-          inputOne={resultOne}
-          inputTwo={resultTwo}
-          saveResult={saveThirdResult}
-        />
-        <span>Salida final entre ambas logicGates: {resultThree}</span>
+        <LogicGates inputOne={firstResult} inputTwo={secondResult} holdResult={holdThirdResult}/>
+        <p>Resultado final entre ambas logicGates: {thirdResult}</p>
       </div>
-    </section>
+    </div>
   );
 }

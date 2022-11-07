@@ -1,10 +1,9 @@
-const InputOne = ({ saveInputValue, inputOneValue }) => {
+const InputOne = ({ holdInputValue }) => {
     return (
       <div>
         <label htmlFor="input1">Entrada 1:</label>
-        <input type="number" id="input1" onChange={saveInputValue} value={inputOneValue}/>
+        <input type="number" id="input1" onChange={holdInputValue}/>
       </div>
-    );
-  };
-  
+    ); 
+  }; 
   export default InputOne;

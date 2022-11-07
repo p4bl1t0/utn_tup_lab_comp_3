@@ -3,38 +3,38 @@ import Array from "../ArrayEl/Array";
 
 const Input = () => {
   const [enteredText, setEnteredText] = useState("");
-  const [arraySave, setArraySave] = useState([]);
+  const [arrayHold, setArrayHold] = useState([]);
 
-  const changeTextHandler = (event) => {
-    setEnteredText(event.target.value); 
-  };
-
-  const clickButtonHandler = () => {
+  const onClickButton = () => {
     if (enteredText !== "") {
-      setArraySave([...arraySave, enteredText]);
+      setArrayHold([...arrayHold, enteredText]);
       setEnteredText("");
     }
   };
 
-  const deleteArrayItem = (index) => {
-    let newArray = arraySave.slice(0);
-    newArray.splice(index, 1);
-    setArraySave(newArray);
+  const onChangeText = (event) => {
+    setEnteredText(event.target.value); 
   };
 
-  const changeArrayItem = (index, newItem) => {
-    let editedArray = arraySave.slice(0);
+  const changeArray = (index, newItem) => {
+    let editedArray = arrayHold.slice(0); 
     editedArray[index] = newItem;
-    setArraySave(editedArray);
+    setArrayHold(editedArray);
+  };
+
+  const deleteArray = (index) => {
+    let newArray = arrayHold.slice(0);
+    newArray.splice(index, 1);
+    setArrayHold(newArray);
   };
 
   return (
     <div>
-      <input onChange={changeTextHandler} value={enteredText} type="text" />
-      <button onClick={clickButtonHandler} type="button">
+      <input onChange={onChangeText} value={enteredText} type="text" />
+      <button onClick={onClickButton} type="button">
         Enviar
       </button>
-      <Array array={arraySave} deleteArrayItem={deleteArrayItem} changeArrayItem={changeArrayItem} />
+      <Array array={arrayHold} changeArray={changeArray} deleteArray={deleteArray}/>
     </div>
   );
 };

@@ -1,17 +1,17 @@
 import EntradaValorEditable from "./EntradaValorEditable";
 
-const Array = ({ array, deleteArrayItem, changeArrayItem }) => {
-  const deleteButtonHandler = (index) => {
-    deleteArrayItem(index);
+const Array = ({ array, changeArray, deleteArray }) => {
+  const onDeleteButton = (index) => {
+    deleteArray(index);
   };
 
   return array.map((item, index) => {
-    if (!isNaN(item) && !isNaN(parseFloat(item))) { 
-      let evenOdd = Math.round(parseFloat(item)) % 2 === 0 ? "Par" : "Impar";
+    if (!isNaN(parseFloat(item) && !isNaN(item))) { 
+      let evenOrOdd = Math.round(parseFloat(item)) % 2 === 0 ? "Par" : "Impar";
       return (
         <div key={index}>
-          <p>
-            {Math.round(item)} ({evenOdd})
+          <p> 
+            {Math.round(item)} ({evenOrOdd})
           </p>
         </div>
       );
@@ -19,12 +19,10 @@ const Array = ({ array, deleteArrayItem, changeArrayItem }) => {
       return (
         <div key={index}>
           <EntradaValorEditable
-            value={item}
-            onEdit={(newValue) => {
-              changeArrayItem(index, newValue);
-            }}
-          />
-          <button onClick={() => deleteButtonHandler(index)}>Borrar</button>
+            value={item} onEdit={(newValue) => {
+              changeArray(index, newValue);
+            }}/>
+          <button onClick={() => onDeleteButton(index)}>Borrar</button>
         </div>
       );
   });

@@ -1,10 +1,9 @@
-const Checkbox = ({ saveCheckbox, checkboxValue }) => {
+const Checkbox = ({ holdCheckboxValue }) => {
     return (
       <div>
-        <label htmlFor="Checkbox">Entrada 2:</label>
-        <input type="checkbox" onChange={saveCheckbox} value={checkboxValue} id="Checkbox"/>
+        <label htmlFor="checkbox">Entrada 2:</label>
+        <input type="checkbox" onChange={holdCheckboxValue} id="checkbox"/>
       </div>
-    );
+    ); 
   };
-  
   export default Checkbox
