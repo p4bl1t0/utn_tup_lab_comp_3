@@ -9,7 +9,7 @@ const Main = ({pageBody,links}) => {
         <>
         <nav>
             <ul>
-                {(links || []).map((item)=> <li> <a href={item}> {item} </a> </li>)}
+                {(links || []).map((item,index)=> <li key={index}> <a href={item}> {item} </a> </li>)}
             </ul>
         </nav>
         <div className='bodyMain'>

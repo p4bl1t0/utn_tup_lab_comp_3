@@ -1,39 +1,42 @@
 import { useState } from "react";
 
 
-const LogicGates = ({inputValue,checkboxValue}) => {
+const LogicGates = ({valueOne,valueTwo,resultLg}) => {
 
     const [output,setOutput] = useState();
 
     const selectHandler = (e) => {
         let aux = e.target.value; 
-        console.log(aux)
-
+        let result;
         switch(aux){
             case "OR": 
-                setOutput(Boolean(inputValue || checkboxValue).toString())
+                result = Boolean(valueOne || valueTwo).toString()
                 break;
             case "AND": 
-                setOutput(Boolean(inputValue && checkboxValue).toString())
+                result = Boolean(valueOne && valueTwo).toString()
                 break;
             case "NAND": 
-                setOutput(Boolean(!(inputValue && checkboxValue)).toString())
+                result = Boolean(!(valueOne && valueTwo)).toString()
                 break;
             case "NOR": 
-                setOutput(Boolean(!(inputValue || checkboxValue)).toString())
+                result = Boolean(!(valueOne || valueTwo)).toString()
                 break;
             case "XOR": 
-                setOutput(Boolean(( inputValue && !checkboxValue ) || ( !inputValue && checkboxValue )).toString())
+                result = Boolean(( valueOne && !valueTwo ) || ( !valueOne && valueTwo )).toString()
                 break;
 
             default:  ; 
         }
+
+        setOutput(result)
+        resultLg(result === "true"?1:0)
+
         
     }
     return (
         <div>
-            <select onChange={selectHandler}>
-                <option disabled >select</option>
+            <select onChange={selectHandler} >
+                <option disabled selected>select</option>
                 <option value="OR">OR</option>
                 <option value="AND">AND</option>
                 <option value="NAND">NAND</option>
