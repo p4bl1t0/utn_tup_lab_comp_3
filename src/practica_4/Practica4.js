@@ -4,6 +4,7 @@ import Input1 from "./Input1";
 import LogicGates from "./LogicGates";
 import RadioInput from "./RadioInput";
 import RangeInput from "./RangeInput";
+import './p4.css'
 
 const Practica4 = () => {
 
@@ -28,9 +29,13 @@ const Practica4 = () => {
         setInput4Value(parseInt(event.target.value))
     }
 
+    const colorHandler = (result) => {
+        return Boolean(result).toString() === "true" ? "true" : "false"
+    }
+
     return (
-        <>
-            <div>
+        <div className="items">
+            <div className="item">
                 <label>Logica 1:</label>
                 <br/>
                 <Input1 input1Value={input1Value} inputValueHandler={input1ValueHandler}/>
@@ -38,9 +43,9 @@ const Practica4 = () => {
                 <LogicGates setResultLogic={setResultLogic1} input1Value={input1Value} input2Value={input2Value}/>
                 <br/>
                 <label>Resultado logica 1</label>
-                <p>{Boolean(resultLogic1).toString()}</p>
+                <p className={colorHandler(resultLogic1)}>{Boolean(resultLogic1).toString()}</p>
             </div>
-            <div>
+            <div className="item">
                 <label>Logica 2:</label>
                 <br/>
                 <RadioInput input3ValueHandler={input3ValueHandler}/>
@@ -48,17 +53,17 @@ const Practica4 = () => {
                 <LogicGates setResultLogic={setResultLogic2} input1Value={input3Value} input2Value={input4Value}/>
                 <br/>
                 <label>Resultado logica 2</label>
-                <p>{Boolean(resultLogic2).toString()}</p>
+                <p className={colorHandler(resultLogic2)}>{Boolean(resultLogic2).toString()}</p>
             </div>
-            <div>
+            <div className="item">
                 <label>Logica 3:</label>
                 <br/>
                 <LogicGates setResultLogic={setResultLogic3} input1Value={resultLogic1} input2Value={resultLogic2}/>
                 <br/>
                 <label>Resultado logicas 1 y 2</label>
-                <p>{Boolean(resultLogic3).toString()}</p>
+                <p className={colorHandler(resultLogic3)}>{Boolean(resultLogic3).toString()}</p>
             </div>
-        </>
+        </div>
     );
 
 }
