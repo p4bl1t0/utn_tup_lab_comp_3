@@ -8,7 +8,6 @@ Leer el enunciado de cada práctica en cada carpeta y resolverlo adecuamente de 
 
 `npm install`
 
-
 - Ejecutar el proyecto:
 
 `npm start`
@@ -18,3 +17,4 @@ Leer el enunciado de cada práctica en cada carpeta y resolverlo adecuamente de 
 Fecha de creación: 2022
 Profesores: Pablo Botta - Gabriel Golzman
 Práctica sobre React utilizando git
+.
