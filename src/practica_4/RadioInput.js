@@ -5,9 +5,9 @@ const RadioInput = ({input3ValueHandler}) => {
     <>
       <div className='radio'>
         <label>0</label>
-        <input type="radio" value='0' onChange={input3ValueHandler} name='0'/>
+        <input type="radio" value='0' onChange={input3ValueHandler} name='radioValue'/>
         <label>1</label>
-        <input type="radio" value='1' onChange={input3ValueHandler} name='1'/>
+        <input type="radio" value='1' onChange={input3ValueHandler} name='radioValue'/>
       </div>
     </>
   )
