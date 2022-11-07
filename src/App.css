@@ -2,9 +2,11 @@
   display: inline-block;
   padding: 5px;
 }
-
+.body-change {
+  font-style: italic;
+}
 .title-color {
-  color: blue;
+  color: crimson;
 }
 .title-decoration {
   text-transform: uppercase;
