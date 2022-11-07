@@ -14,7 +14,9 @@ export default function Practica4() {
   const [inputRadio, setInputRadio] = useState(0);
   const [resultLogicGates1, setResultLogicGates1] = useState();
   const [resultLogicGates2, setResultLogicGates2] = useState();
+  //eslint-disable-next-line
   const [resultLogicGatesTotal, setresultLogicGatesTotal] = useState();
+  
   return (
     <div className="sectionCards">
       <section className="card">

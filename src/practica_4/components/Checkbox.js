@@ -12,6 +12,7 @@ const Checkbox = ({ inputCheckbox, setInputCheckbox }) => {
         checked={inputCheckbox}
         onChange={handlerInputCheckbox}
       />
+      <label> = {inputCheckbox}</label>
     </div>
   );
 };
