@@ -6,7 +6,7 @@ const BlogPost = ({ title, body }) => {
   return (
     <>
         <Title title={title} />
-        <Body body={body}/>
+        <Body body={body}/> 
     </>
   )
 }

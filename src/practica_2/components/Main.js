@@ -9,7 +9,7 @@ const Main = ({body, links}) => {
         <Body body = {body} className='main-body'/>
         <nav>
             <ul>
-                { (links || []).map((item, index) => (
+                { (links || []).map((item, index) => ( 
                     <li key={index}>
                         <a href={item}>{item}</a>
                     </li>
