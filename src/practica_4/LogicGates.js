@@ -1,65 +1,48 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-const LogicGates = ({ inputOne, inputTwo }) => {
+const LogicGates = ({ inputOne, inputTwo, logicResult }) => {
   const [selectInput, setSelectInput] = useState("or");
-  const [output, setOutput] = useState(false);
 
-  useEffect(() => {
+  const selectInputHandler = (e) => {
+    setSelectInput(e.target.value);
+  };
+
+  const resultHandler = () => {
+    let result;
+
     switch (selectInput) {
       case "or":
-        setOutput(inputOne || inputTwo);
+        result = inputOne || inputTwo;
         break;
       case "and":
-        setOutput(inputOne && inputTwo);
+        result = inputOne && inputTwo;
         break;
       case "nand":
-        setOutput(!(inputOne && inputTwo));
+        result = !(inputOne && inputTwo);
         break;
       case "nor":
-        setOutput(!(inputOne || inputTwo));
+        result = !(inputOne || inputTwo);
         break;
       case "xor":
-        setOutput(inputOne !== inputTwo);
+        result = (inputOne && !inputTwo) || (!inputOne && inputTwo) ? 1 : 0;
         break;
       default:
-        console.log("Seleccione una puerta logica: ");
         break;
     }
-  }, [inputOne, inputTwo, selectInput]);
-
-  const selectChangeHandler = (e) => {
-    setSelectInput(e.target.value);
+    logicResult(result);
   };
 
   return (
     <div>
-      <div>
-        <label htmlFor="selectGate">Compuerta lógica:</label>
-        <select
-          onChange={selectChangeHandler}
-          id="selectGate"
-          value={selectInput}
-        >
-          <option value="or">Or</option>
-          <option value="and">And</option>
-          <option value="nand">Nand</option>
-          <option value="nor">Nor</option>
-          <option value="xor">Xor</option>
-        </select>
-      </div>
-      <div>
-        <span>Salida: {output ? "Verdadero" : "Falso"}</span>
-      </div>
-
-      {output ? (
-        <div>
-          <span className="verdadero">Salida: Verdadero</span>
-        </div>
-      ) : (
-        <div>
-          <span className="falso">Salida: Falso</span>
-        </div>
-      )}
+      <label htmlFor="selectGate">Compuerta lógica:</label>
+      <select id="selectGate" onChange={selectInputHandler}>
+        <option value={"or"}>OR</option>
+        <option value={"and"}>AND</option>
+        <option value={"nand"}>NAND</option>
+        <option value={"nor"}>NOR</option>
+        <option value={"xor"}>XOR</option>
+      </select>
+      <button onClick={resultHandler}>Calcular</button>
     </div>
   );
 };

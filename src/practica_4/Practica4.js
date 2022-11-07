@@ -1,16 +1,15 @@
 import { useState, useRef } from "react";
-import CheckInput from "./CheckInput";
+import RadioGates from "./RadioGates";
+import RangeGates from "./RangeGates";
+import InputGates from "./InputGates";
+import CheckboxGates from "./CheckboxGates";
 import LogicGates from "./LogicGates";
-import TextInput from "./TextInput";
-import RadioInput from "./RadioInput";
-import RangeInput from "./RangeInput";
 
 export default function Practica4() {
   const inputRef = useRef();
   const [textInput, setTextInput] = useState(Math.round(Math.random()));
   const [checkboxInput, setCheckboxInput] = useState(0);
-  const [rangeInput, setRangeInput] = useState(0);
-  const [radioInput, setRadioInput] = useState(0);
+  const [result, setResult] = useState("");
 
   const inputHandler = (value) => {
     setTextInput(value === "1" ? 1 : 0);
@@ -20,37 +19,37 @@ export default function Practica4() {
     setCheckboxInput(e.target.checked ? 1 : 0);
   };
 
+  const HandlerResult = (r) => {
+    setResult(r);
+  };
+
   return (
     <div className="App">
+      <InputGates gateInput={inputHandler} />
+      <CheckboxGates checkBox={checkboxHandler} />
+      <LogicGates
+        input1={textInput}
+        input2={checkboxInput}
+        logicResult={HandlerResult}
+      />
       <div>
-        <label for="input 1"> Entrada 1: </label>
-        <TextInput onChange={inputHandler} />
+        <label for="input1">Entrada 1:</label>
+        <input type="number" id="input1" onChange={inputHandler} />
       </div>
       <div>
-        <label type="checkbox">
-          Entrada 2:
-          <CheckInput onChange={checkboxHandler} />
+        <label>
+          <input type="checkbox" onChange={checkboxHandler} /> Entrada 2
         </label>
       </div>
       <div>
-        <label type="range">
-          <RangeInput value={rangeInput} onChange={setRangeInput} />
-        </label>
-      </div>
-      <div>
-        <label type="range">
-          <RadioInput value={radioInput} onChange={setRadioInput} />
-        </label>
-      </div>
-      <div>
-        <LogicGates
-          for="selectGate"
-          inputOne={textInput}
-          inputTwo={checkboxInput}
+        <LogicGate
+          input1={textInput}
+          input2={checkboxInput}
+          saveResult={HandlerResult}
         />
-      </div>
-      <div>
-        <span>Salida: {inputRef}</span>
+        <div>
+          <span>Salida: {result}</span>
+        </div>
       </div>
     </div>
   );
