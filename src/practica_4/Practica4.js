@@ -43,7 +43,7 @@ const Practica4 = () => {
                 <LogicGates setResultLogic={setResultLogic1} input1Value={input1Value} input2Value={input2Value}/>
                 <br/>
                 <label>Resultado logica 1</label>
-                <p className={colorHandler(resultLogic1)}>{Boolean(resultLogic1).toString()}</p>
+                <p className={colorHandler(resultLogic1)}>{resultLogic1}</p>
             </div>
             <div className="item">
                 <label>Logica 2:</label>
@@ -53,7 +53,7 @@ const Practica4 = () => {
                 <LogicGates setResultLogic={setResultLogic2} input1Value={input3Value} input2Value={input4Value}/>
                 <br/>
                 <label>Resultado logica 2</label>
-                <p className={colorHandler(resultLogic2)}>{Boolean(resultLogic2).toString()}</p>
+                <p className={colorHandler(resultLogic2)}>{resultLogic2}</p>
             </div>
             <div className="item">
                 <label>Logica 3:</label>
@@ -61,7 +61,7 @@ const Practica4 = () => {
                 <LogicGates setResultLogic={setResultLogic3} input1Value={resultLogic1} input2Value={resultLogic2}/>
                 <br/>
                 <label>Resultado logicas 1 y 2</label>
-                <p className={colorHandler(resultLogic3)}>{Boolean(resultLogic3).toString()}</p>
+                <p className={colorHandler(resultLogic3)}>{resultLogic3}</p>
             </div>
         </div>
     );
