@@ -84,13 +84,6 @@ export default function Practica3() {
           </div>
         ))}
       </div>
-      <h2>Tamaño del array: {array.length}</h2>
-      <h3>
-        <span>contenido del array: </span>
-        {array.map((item) => (
-          <span>{item} </span>
-        ))}
-      </h3>
     </>
   );
 }

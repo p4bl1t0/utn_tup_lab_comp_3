@@ -3,29 +3,28 @@ import Body from "./Body";
 import "./styles.css";
 
 export default function Main({ pageBody }) {
+  const links = ["https://www.google.com.ar", "https://www.youtube.com"];
+
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <a href="https://www.google.com.ar" target="_blank">
-              Google
-            </a>
-          </li>
+      <div className="titulo-main">
+        <Body body={pageBody} />
+      </div>
 
-          <li>
-            <a href="https://www.youtube.com" target="_blank">
-              YouTube
-            </a>
-          </li>
+      <nav className="nav">
+        <ul>
+          {links.map((item, index) => (
+            <li key={index}>
+              <a href={item} target="_blank">
+                {item}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
 
       <div>
         <p className="pepito">Texto añadido por el alumno.</p>
-      </div>
-      <div className="titulo-main">
-        <Body body={pageBody} />
       </div>
       <BlogPost />
       <footer className="footer">
