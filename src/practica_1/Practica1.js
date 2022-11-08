@@ -123,12 +123,11 @@ const watchList = [
 	},
 ];
 
-const returnMovieTitle = (watchlist) => {
-    // Aquí adentro escriban la función
+const returnMovieTitle = (watchList) => {
+	return watchList.filter(item => item.Director === 'Christopher Nolan' && item.imdbRating > 8.00).map(item => item.Title); 
 }
 export default function Practica1 () {
     let titlesArray = returnMovieTitle(watchList);
-    console.log(titlesArray);
     if (!Array.isArray(titlesArray)) {
         titlesArray = [];
     }
@@ -143,6 +142,3 @@ export default function Practica1 () {
         </div>
     )
 } 
-
-// 
-// 

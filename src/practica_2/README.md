@@ -22,7 +22,7 @@ const site = {
 * Crear la carpeta `components` dentro de `practica_2` 
 * Crear el componente `Title` que reciba como parámetro la propiedad `pageTitle` y la renderice dentro de una etiqueta de encabezado (`h1`).
 * Crear el componente `Body` que reciba como parámetro la propiedad `pageBody` y la renderice dentro de una etiqueta `div`
-* Importar los componentes `Title` y `Body` desde `App.js` y renderizarlos pasándose como propiedades sus respectivos valores de la constante `site`. 
+* Importar los componentes `Title` y `Body` desde `Practica2.js` y renderizarlos pasándose como propiedades sus respectivos valores de la constante `site`. 
 * Bonus: utilizar `object destructuring` para leer las propiedades pasadas a los componentes como argumentos
 
 
@@ -39,7 +39,7 @@ const site = {
 ### Tarea 3
 
 * Crear un componente `Page` de forma que acepte hijos (children) y los renderice de esa forma a los componente `Main` y `Header`
-* Refactorizar `App` para que importe y renderice `Page`, recordar enviarle que la constante site debe estar definida en `App` y enviarla a los distintos componentes via `props`.
+* Refactorizar `Practica 2` para que importe y renderice `Page`, recordar enviarle que la constante site debe estar definida en `Practica 2` y enviarla a los distintos componentes via `props`.
 * En el componente `Main` modificar el contenido de la página agregando una frase a elección del alumno.
 
 
