@@ -6,20 +6,23 @@ import "./Style.css";
 const Main = ({ pageBody, links, pageTitle }) => {
   return (
     <>
-      <nav>
-        <ul>
-          {links ||
-            [].map((item, index) => (
-              <li key={index}>
-                <a href={item}> {item} </a>
-              </li>
-            ))}
-        </ul>
-      </nav>
-      <div className="bodyMain">
+      <div className="titulo-main">
         <Body body={pageBody} />
       </div>
-      <BlogPost
+
+      <nav className="nav">
+        <ul>
+          {links.map((item, index) => (
+            <li key={index}>
+              <a href={item}>
+                {item}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+        <BlogPost 
         body={"Información sobre la Web3 y Cripto"}
         title={"El futuro de la Web"}
       />

@@ -8,7 +8,8 @@ const site = {
 };
 
 const links = [
-  "https://ethereum.org/es/developers/docs/intro-to-ethereum/",
+  "https://ethereum.org/es/developers/docs/intro-to-ethereum/" , 
+
   "https://es.investing.com/crypto/",
 ];
 
