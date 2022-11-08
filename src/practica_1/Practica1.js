@@ -124,25 +124,21 @@ const watchList = [
 ];
 
 const returnMovieTitle = (watchlist) => {
-    // Aquí adentro escriban la función
+	const result = watchlist.filter(item => item.Director === "Christopher Nolan" && item.imdbRating > 8.0)
+	return result;
 }
 export default function Practica1 () {
     let titlesArray = returnMovieTitle(watchList);
-    console.log(titlesArray);
     if (!Array.isArray(titlesArray)) {
         titlesArray = [];
     }
     return (
-        <div>
-            <p>Películas de Christopher Nolan</p>
+        <div>   
             <ul>
                 { titlesArray.map((item, index) => (
-                    <li key={index}>{item}</li>
+                    <li key={index}>{item.Title}</li>
                 ))}
             </ul>
         </div>
     )
 } 
-
-// 
-// 

@@ -1,17 +1,19 @@
-export default function Menu ({ onOptionSelected }) {
-    const onClickOptionHandler = (event) => {
-        event.preventDefault();
-        onOptionSelected(event.target.hash);
-    };
+import { useContext } from "react";
+import MenuContext from "./practica_5/MenuContext";
+
+export default function Menu () {
+
+    const {selected, selectedHandle} = useContext(MenuContext);
+
     return (
-        <div>
+        <>
             <h1>TUP - UTN - Laboratorio de computación 3 - Práctica</h1>
-            <div className="menu">
-                <a href="#practica_1" onClick={onClickOptionHandler}>Práctica 1</a>
-                <a href="#practica_2" onClick={onClickOptionHandler}>Práctica 2</a>
-                <a href="#practica_3" onClick={onClickOptionHandler}>Práctica 3</a>
-                <a href="#practica_4" onClick={onClickOptionHandler}>Práctica 4</a>
-            </div>
-        </div>
+                <select onChange={selectedHandle}>
+                    <option value="practica_1">Práctica 1</option>
+                    <option value="practica_2">Práctica 2</option>
+                    <option value="practica_3">Práctica 3</option>
+                    <option value="practica_4">Práctica 4</option>
+                </select>
+        </>
     );
 }

@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap');
+.result1{
+    display: flex;
+    background-color: rgb(79, 143, 73);
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px 3px;
+    font-family: 'Ubuntu'
+}
+.result2{
+    display: flex;
+    background-color: rgb(79, 143, 73);
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px 3px;
+    font-family: 'Ubuntu'
+}
+.result3{
+    display: flex;
+    background-color: rgb(29, 92, 27);
+    margin: 60px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px 3px;
+    font-family: 'Ubuntu'
+}
+input[type="range"] {
+    -webkit-appearance: chrome;
+    margin-right: 15px;
+    width: 150px;
+    height: 7px;
+    border-radius: 15%;
+    font-family: 'Ubuntu'
+  }
+div{padding: 10px;}
+.numberRadio{
+    margin-left: 25px;
+    font-family: 'Ubuntu'
+}
+.numberRange{
+    margin-left: -10px;
+    padding: 0;
+    font-family: 'Ubuntu'
+}
