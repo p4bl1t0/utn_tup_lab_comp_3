@@ -3,6 +3,16 @@
   padding: 5px;
 }
 
+.blogpost-style {
+  background-color: #bbb;
+  text-align: center;
+  padding: 30px 20px 40px;
+  margin-top: 20px;
+}
+
+.main-style p:first-child {
+  font-style: italic;
+}
 .title-color {
   color: blue;
 }
