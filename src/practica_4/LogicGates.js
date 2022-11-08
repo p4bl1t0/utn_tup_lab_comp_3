@@ -18,27 +18,19 @@ const LogicGates = ({ savedEndResult }) => {
     const [resultado2, setResultValue2] = useState(null)
     const [select2, setSelect2Value] = useState(null)
 
+    const [resultado3, setResultValue3] = useState(null)
+    const [select3, setSelect3Value] = useState(null)
+
     const [input, setInputValue] = useState(valueInput)
     const [checkbox, setCheckboxValue] = useState(0)
     const [range, setRangeValue] = useState(0);
 
     const [radio, setRadioValue] = useState(0);
 
-    const [savedValue1, setsavedValue1] = useState("");
-    const [savedValue2, setsavedValue2] = useState("");
-    const [savedValue3, setsavedValue3] = useState("");
+    const [savedValue1, setsavedValue1] = useState(null);
+    const [savedValue2, setsavedValue2] = useState(null);
 
-    const saveValue1 = (result) => {
-        setsavedValue1(result);
-    };
 
-    const saveValue2 = (result) => {
-        setsavedValue2(result);
-    };
-
-    const saveValue3 = (result) => {
-        setsavedValue3(result);
-    };
 
 
     const changeValueInput = (event) => {
@@ -117,7 +109,7 @@ const LogicGates = ({ savedEndResult }) => {
             default:
             //
         }
-        savedEndResult(result);
+        setsavedValue1(result);
 
     }
 
@@ -162,9 +154,54 @@ const LogicGates = ({ savedEndResult }) => {
             default:
             //
         }
-        savedEndResult(result);
+        setsavedValue2(result);
 
     }
+
+    const changeThirdSelectValue = (event) => {
+        const select3 = event.target.value
+        let result = 0;
+        console.log(select3);
+        switch (select3) {
+            case "OR":
+                savedValue1 == 1 || savedValue2 == 1
+                ?
+                result = 1
+                :
+                result = 0
+                setResultValue3(result)
+                break;
+            case "AND":
+                result = savedValue1 + savedValue2
+                result >= 1
+                    ? setResultValue3(1)
+                    : setResultValue3(0)
+                break;
+            case "NAND":
+                result = savedValue1 + savedValue2
+                result == 0
+                    ? setResultValue3(1)
+                    : setResultValue3(0)
+
+                break;
+            case "NOR":
+                result = savedValue1 * savedValue2
+                result == 0
+                    ? setResultValue3(1)
+                    : setResultValue3(0)
+                break;
+            case "XOR":
+                result = savedValue1 + savedValue2
+                if (savedValue1 == 0 && savedValue2 == 0) { result = 0 };
+                if (savedValue1 == 1 && savedValue2 == 1) { result = 0 };
+                setResultValue3(result)
+                break;
+            default:
+            //
+        }
+
+    }
+    
 
 
     return (
@@ -207,6 +244,20 @@ const LogicGates = ({ savedEndResult }) => {
 
             </div>
             <br />
+            <div className='block3'>
+            <div >
+                    <label for="selectGate2">Compuerta lógica:</label>
+                    <select id="selectGate2" value={select3} onChange={changeThirdSelectValue}>
+                        <option value="OR">OR</option>
+                        <option value="AND">AND</option>
+                        <option value="NAND">NAND</option>
+                        <option value="NOR">NOR</option>
+                        <option value="XOR">XOR</option>
+                    </select>
+
+                <div><span>Salida: {resultado3}</span></div>
+                </div>
+            </div>
 
 
         </div>
