@@ -4,5 +4,15 @@
   justify-content: space-between;
   margin-top: 10px;
   padding: 10px;
-  height: 150px;
+  min-height: 150px;
+}
+
+.new-inputs {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.fix {
+  display: flex;
+  margin-left: 40px;
 }

@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-const LogicGate = ({ input1, input2 }) => {
+const LogicGate = ({ input1, input2, setResult }) => {
   const [logicGate, setLogicGate] = useState();
-
-  // useEffect(input1.value).onChange(logicGateHandler());
 
   const logicGateHandler = (event) => {
     let aux = event.target.value;
@@ -27,11 +25,12 @@ const LogicGate = ({ input1, input2 }) => {
         );
         break;
     }
+    setResult(logicGate);
   };
-  //logicGate.onChange ? { logicGateHandler } : "";
 
   return (
     <div>
+      <p>Seleccione la compuerta lógica:</p>
       <select onChange={logicGateHandler}>
         <option disabled selected>
           Select Gate
@@ -42,7 +41,7 @@ const LogicGate = ({ input1, input2 }) => {
         <option value="NOR">NOR</option>
         <option value="XOR">XOR</option>
       </select>
-      <h3>{logicGate}</h3>
+      <h3>Resultado: {logicGate}</h3>
     </div>
   );
 };
