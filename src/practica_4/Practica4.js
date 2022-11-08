@@ -1,14 +1,14 @@
-import { useRef } from "react";
+import Input from "./components/Input";
+import Checkbox from "./components/Checkbox";
+import LogicGates from "./components/LogicGates";
 
-import LogicGates from "./LogicGates";
-
-export default function Practica4({}) {
-  const inputRef = useRef();
-
+export default function Practica4() {
   return (
     <div className="App">
-      <LogicGates />
       <div>
+        <Input />
+        <Checkbox />
+        <LogicGates />
         <span>Salida: {}</span>
       </div>
     </div>

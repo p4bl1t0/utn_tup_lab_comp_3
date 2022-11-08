@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-const CheckboxValue = () => {
-  const [checkbox, setCheckbox] = useState("");
+const Checkbox = () => {
+  const [checkbox, setCheckbox] = useState(0);
 
   const getCheckboxValue = (event) => {
-    setCheckbox(event.target.checked);
+    setCheckbox(event.target.checked ? 1 : 0);
   };
 
   return (
@@ -17,4 +17,4 @@ const CheckboxValue = () => {
   );
 };
 
-export default CheckboxValue;
+export default Checkbox;

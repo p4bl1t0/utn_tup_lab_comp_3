@@ -1,14 +1,14 @@
 import { useState } from "react";
+import List from "./List";
 
 export default function Practica3() {
   const [inputValue, setInputValue] = useState("");
   const [array, setArray] = useState([]);
 
-  const onInputValueChange = (event) => {
+  const onInputChange = (event) => {
     setInputValue(event.target.value);
   };
-
-  const onInputValueAddClick = () => {
+  const onAddButtonClick = () => {
     setArray(array.concat([inputValue]));
     setInputValue("");
   };
@@ -19,31 +19,22 @@ export default function Practica3() {
     setArray(copyArray);
   };
 
+  const onEditItemHandler = (index, newValue) => {
+    let copyArray = [...array];
+    copyArray[index] = newValue;
+    setArray(copyArray);
+  };
+
   return (
     <div>
       <h3>Práctica 3</h3>
-      <input type="text" value={inputValue} onChange={onInputValueChange} />
-      <button type="button" onClick={onInputValueAddClick}>
-        Agregar
-      </button>
-      {array.map((item, index) => (
-        <div key={index}>
-          {!isNaN(Number(item)) ? (
-            <span>
-              {item}: {item % 2 === 0 ? "Par" : "Impar"}
-            </span>
-          ) : (
-            <input value={item} />
-          )}
-          <button
-            onClick={() => {
-              onDeleteItemHandler(index);
-            }}
-          >
-            Borrar
-          </button>
-        </div>
-      ))}
+      <input value={inputValue} onChange={onInputChange} />
+      <button onClick={onAddButtonClick}>Agregar valor</button>
+      <List
+        list={array}
+        onDelete={onDeleteItemHandler}
+        onEdit={onEditItemHandler}
+      />
     </div>
   );
 }
