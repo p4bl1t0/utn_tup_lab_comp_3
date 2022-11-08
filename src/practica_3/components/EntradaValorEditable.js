@@ -13,6 +13,7 @@ const EntradaValorEditable = ({ value, onEdit }) => {
         <div>
             <input value={internalValue} onChange={onValueChange} />
             <button onClick={onEditClick}>Editar</button>
+            
 
 
         </div>
