@@ -1,35 +1,40 @@
 import { useState } from "react";
 
-const LogicGates = ({ input, checkbox }) => {
-  const [select, setSelect] = useState("");
+const LogicGates = ({ input, checkbox, setOutput }) => {
+  const [selected, setSelected] = useState();
 
-  const getSelectedHandler = (event) => {
-    setSelect(event.target.value);
-  };
+  const logicGatesHandler = (event) => {
+    let selectValue = event.target.value;
 
-  const getLogicGateHandler = () => {
-    if (select === "or") {
-      return input || checkbox;
+    switch (selectValue) {
+      case "or":
+        setSelected(Boolean(input || checkbox).toString());
+        break;
+      case "and":
+        setSelected(Boolean(input && checkbox).toString());
+        break;
+      case "nand":
+        setSelected(Boolean(!(input && checkbox)).toString());
+        break;
+      case "nor":
+        setSelected(Boolean(!(input || checkbox)).toString());
+        break;
+      case "xor":
+        setSelected(
+          Boolean((input && !checkbox) || (!input && checkbox)).toString()
+        );
+        break;
+      default:
+        break;
     }
-    if (select === "and") {
-      return input && checkbox;
-    }
-    if (select === "nand") {
-      return !(input && !checkbox);
-    }
-    if (select === "nor") {
-      return !(input || !checkbox);
-    }
-    if (select === "xor") {
-      return (!input && checkbox) || (input && !checkbox);
-    }
+    setOutput(selected);
   };
 
   return (
     <div>
       <div>
         <label for="selectGate">Compuerta lógica:</label>
-        <select id="selectGate" value={select} onChange={getSelectedHandler}>
+        <select id="selectGate" onChange={logicGatesHandler}>
           <option>Select gate</option>
           <option value="or">OR</option>
           <option value="and">AND</option>
@@ -38,7 +43,9 @@ const LogicGates = ({ input, checkbox }) => {
           <option value="xor"> XOR</option>
         </select>
       </div>
-      <span>Salida: {getLogicGateHandler}</span>
+      <div>
+        <span>Salida: {selected}</span>
+      </div>
     </div>
   );
 };
