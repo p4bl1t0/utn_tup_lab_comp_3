@@ -1,0 +1,14 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.input-adjust {
+  padding-top: 15px;
+  margin-left: 2px;
+}
+
+.output {
+  margin-top: 5px;
+}
