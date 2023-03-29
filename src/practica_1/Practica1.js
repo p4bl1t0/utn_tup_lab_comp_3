@@ -123,18 +123,29 @@ const watchList = [
 	},
 ];
 
+const filterMovies = (watchlist) => {
+    // Aquí adentro escriban la función para filtrar
+	return [];
+}
 const returnMovieTitle = (watchlist) => {
-    // Aquí adentro escriban la función
+    // Aquí adentro escriban la función para mostrar titulo
+	return [];
+}
+const sumOfDuration = (watchlist) => {
+    // Aquí adentro escriban la función para sumarizar
+	return 0;
 }
 export default function Practica1 () {
-    let titlesArray = returnMovieTitle(watchList);
+	let moviesFiltered = filterMovies(watchList);
+    let titlesArray = returnMovieTitle(moviesFiltered);
+    let durationSum = sumOfDuration(moviesFiltered);
     console.log(titlesArray);
     if (!Array.isArray(titlesArray)) {
         titlesArray = [];
     }
     return (
         <div>
-            <p>Películas de Christopher Nolan</p>
+            <p>Películas de Christopher Nolan: { durationSum } minutos</p>
             <ul>
                 { titlesArray.map((item, index) => (
                     <li key={index}>{item}</li>

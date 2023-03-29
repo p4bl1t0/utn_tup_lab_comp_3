@@ -12,8 +12,19 @@ Considerando la watchlist del archivo `Practica1.js`, crear una función que tom
 1. Dirigidas por Cristopher Nolan.
 2. Con un imdbRating > 8.0
 
+
+### Tarea 2
+Utilizar el arreglo filtrado de la tarea anterior para mostrar solo el título de las películas. Utilizar la función filter.
+
+
+### Tarea 2
+Utilizar el arreglo filtrado de la tarea anterior para mostrar solo el título de las películas. Utilizar la función map.
+
+
+### Tarea 3
+Utilizar el arreglo filtrado de la tarea anterior para calcular la duración total sumadas de las películas. Utilizar la función reduce.
+
 #### Considerar
-* El arreglo que se devuelve SOLO DEBE CONTENER el nombre de la película, ningún otra información
-* Es obligatorio para este ejercicio resolverlo con la función map()
+* El arreglo que se devuelve SOLO DEBE CONTENER el nombre de la película, ningún otra información.
 
 
