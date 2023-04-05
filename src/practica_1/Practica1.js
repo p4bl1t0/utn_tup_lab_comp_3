@@ -125,7 +125,7 @@ const watchList = [
 
 const filterMovies = (watchlist) => {
 	// Aquí adentro escriban la función para filtrar
-	return watchlist.filter((item,index) => (
+	return watchlist.filter((item) => (
 	item.Director === "Christopher Nolan" && item.imdbRating > 8)
 	)
 	
@@ -140,7 +140,7 @@ const filterMovies = (watchlist) => {
 	const sumOfDuration = (watchlist) => {
 	// Aquí adentro escriban la función para sumarizar
 	
-	return watchlist.reduce((acumulattor,item) => acumulattor + parseInt(item.Runtime) );
+	return watchlist.reduce((acumulattor,item) => acumulattor + parseInt(item.Runtime,10),0 );
 }
 export default function Practica1 () {
 	let moviesFiltered = filterMovies(watchList);
