@@ -140,11 +140,10 @@ const returnMovieTitle = (watchlist) => {
   return watchlist.map((movieTitle) => movieTitle.Title);
 };
 const sumOfDuration = (watchlist) => {
-  return watchlist
-    .map((movie) => parseInt(movie.Runtime))
-    .reduce((runTime) => (runTime += runTime));
-  // estoy teniendo un error en la sumatoria... no se porque me suma (la posicion [1] del array nuevamente) 148+152+140 (que son los 3 elementos pero luego me suma)
-  //152... por lo que me queda 148+152+140+152=592. cosa que no debe ser.
+  return watchlist.reduce(
+    (result, runTime) => (result = result + parseInt(runTime.Runtime)),
+    0
+  );
 };
 export default function Practica1() {
   let moviesFiltered = filterMovies(watchList);
