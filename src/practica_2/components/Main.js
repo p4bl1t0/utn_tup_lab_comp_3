@@ -1,22 +1,24 @@
 import Body from "./Body";
-
-const Main = ({ items, sites }) => {
+import BlogPost from "./BlogPost";
+const Main = ({ items, pages }) => {
   return (
     <>
       <nav>
         <ul>
-          {sites.map((url) => {
+          {pages.map((link) => {
             return (
-              <li>
-                <h1>hola</h1>
+              <li key={link.id}>
+                <a target="_blank" rel="noreferrer" href={link.url}>
+                  {link.url}
+                </a>
               </li>
             );
           })}
-
-          <li></li>
         </ul>
       </nav>
-      <Body pageBody={items.pageBody} />
+      <h2>I wish 2 things: a developer job, and improve my knowledge.</h2>
+      <Body body={items.pageBody} />
+      <BlogPost />
     </>
   );
 };

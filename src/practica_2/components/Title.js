@@ -1,7 +1,7 @@
-const Title = ({ pageTitle }) => {
+const Title = ({ title }) => {
   return (
     <div>
-      <h2>{pageTitle}</h2>
+      <h1>{title}</h1>
     </div>
   );
 };
