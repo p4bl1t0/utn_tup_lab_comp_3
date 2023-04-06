@@ -1,10 +1,8 @@
 
-const Body = (site) => {
-    const pageBody= site.pageBody;
+const Body = ({...site}) => {
+  const pageBody = site.pageBody;
   return (
-    <div>
-        {pageBody}
-    </div>
+    <div>{pageBody}</div>
   )
 }
 

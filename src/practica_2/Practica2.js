@@ -7,10 +7,11 @@ const site = {
 };
 
 export default function Practica2 () {
+
     return (
         <div>
-            <Title/>
-            <Body/>
+            <Title pageTitle={site.pageTitle}/>
+            <Body pageBody = {site.pageBody}/>
         </div>
     );
 }
