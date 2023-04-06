@@ -1,17 +1,24 @@
-import Title from "./components/Title";
-import Body from "./components/Body";
-
-const site = {
-    pageTitle: 'Unidad 1.2 - Práctica',
-    pageBody: 'Implementación de árbol de componentes y propiedades en React.'
-};
+import Header from "./components/Header";
+import Main from "./components/Main";
 
 export default function Practica2 () {
 
+    const site = {
+        pageTitle: 'Unidad 1.2 - Práctica',
+        pageBody: 'Implementación de árbol de componentes y propiedades en React.'
+    };
+    
+    const links = {
+    
+        youTube: <a href="https://www.youtube.com/"> https://www.youtube.com/ </a>,
+        twitchTv: <a href="https://www.twitch.tv//"> https://www.twitch.tv/ </a>
+    
+    };
+
     return (
         <div>
-            <Title pageTitle={site.pageTitle}/>
-            <Body pageBody = {site.pageBody}/>
+            <Header pageTitle={site.pageTitle}/>
+            <Main pageBody = {site.pageBody} {...links}/>
         </div>
     );
 }
