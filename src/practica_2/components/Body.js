@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Body = ({pageBody}) => {
+const Body = ({body}) => {
   return (
     <div>
-        <div>{pageBody}</div>
+        <div>{body}</div>
     </div>
   )
 }
