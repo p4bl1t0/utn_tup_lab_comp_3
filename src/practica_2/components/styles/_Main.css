@@ -1,0 +1,29 @@
+.shadow {
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.53);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.53);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.53);
+  background-color: rgb(0, 0, 0);
+  color: white;
+  margin-bottom: 3rem;
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 70rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.menuBackstorage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+* {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.link {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
