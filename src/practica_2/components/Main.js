@@ -11,6 +11,7 @@ const Main = ({pageBody, links}) => {
                 <li><a href={links[1]} target='blank'>Instagram</a></li>
             </ul>
         </nav>
+        <p>Happy hacking</p>
     </div>
   )
 }

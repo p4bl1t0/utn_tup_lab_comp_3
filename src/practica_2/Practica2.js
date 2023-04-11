@@ -1,5 +1,6 @@
-import Header from "./components/Header";
-import Main from "./components/Main";
+import Page from "./components/Page";
+import Main from "./components/Main"
+import Header from "./components/Header"
 const site = {
     pageTitle: 'Unidad 1.2 - Práctica',
     pageBody: 'Implementación de árbol de componentes y propiedades en React.',
@@ -9,8 +10,10 @@ const site = {
 export default function Practica2 () {
     return (
         <div>
-            <Header pageTitle={site.pageTitle}/>
-            <Main pageBody={site.pageBody} links={site.links} />
+           <Page>
+                <Header pageTitle={site.pageTitle}/>
+                <Main pageBody={site.pageBody} links={site.links}/>
+           </Page>
         </div>
     );
 }
