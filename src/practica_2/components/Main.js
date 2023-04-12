@@ -1,10 +1,8 @@
 import Body from "./Body"
 
-const Main = ({pageBody , ...links}) => {
+const Main = ({pageBody , youTube, twitchTv }) => {
 
-    const youTube = links.youTube;
-    const twitchTv = links.twitchTv;
-
+    
 
   return (
     <div>

@@ -1,6 +1,6 @@
 
-const Body = ({...site}) => {
-  const pageBody = site.pageBody;
+const Body = ({pageBody}) => {
+
   return (
     <div>{pageBody}</div>
   )
