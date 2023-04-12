@@ -2,18 +2,46 @@ import { useState } from "react";
 
 export default function Practica3() {
   const [inputValue, setInput] = useState("");
+  const [result, setResult] = useState([]);
 
-  const buttonHandler = (e) => {
-    setInput([inputValue]);
+  const inputHandler = (e) => {
+    setInput(e.target.value);
   };
+  const buttonSaveHandler = () => {
+    // if (inputValue !== "") {
+    //   setResult([...result, { inputValue: inputValue }]);
+    // }
+    if (!isNaN(inputValue)) {
+      setResult([...result, parseInt({ inputValue: inputValue })]);
+    } else {
+      alert("asd");
+    }
+
+    // eslint-disable-next-line no-lone-blocks
+    // {
+    //   inputValue !== ""
+    //     ? setResult([...result, { inputValue: inputValue }])
+    //     : alert("Please add ");
+    // }
+
+    setInput("");
+  };
+  console.log(result);
 
   return (
     <div>
       <h3>Práctica 3</h3>
       <div>
-        <input type="text"></input>
-        <button type="button">Click me</button>
+        <input type="text" value={inputValue} onChange={inputHandler}></input>
+        <button type="button" onClick={buttonSaveHandler}>
+          Save Input
+        </button>
       </div>
+      {result.map((e, i) => (
+        <div key={i}>
+          <h1>{e.inputValue}</h1>
+        </div>
+      ))}
     </div>
   );
 }
