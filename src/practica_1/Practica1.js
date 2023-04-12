@@ -125,18 +125,15 @@ const watchList = [
 
 const filterMovies = (watchlist) => {
 
-    //const Filt = watchlist.filter(movies => movies.Director === 'Christopher Nolan')
-	//const Filte2 = watchlist.filter(rating => rating.imdbRating > '8.0')
-	//return[Filt,Filte2]
     return watchlist.filter ((item,index) => (
     	 item.Director === 'Christopher Nolan' && item.imdbRating >8.0
        //Para sacar el return se usa ()
 	));
 }
 const returnMovieTitle = (watchList) => {
-		return watchList.filter ((item) => (
-			item.Title
-		));
+//		return watchList.filter ((item) => (
+//			item.Title
+//		));
 	}
     // Aquí adentro escriban la función para mostrar titulo
 const sumOfDuration = (watchlist) => {
