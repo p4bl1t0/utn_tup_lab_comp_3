@@ -12,7 +12,12 @@ export default function Practica2 () {
     <>  
     <Page>
         <Header/>
-        <Main name ="Texto Agregado"/>
+        <Main 
+        TextAdd ="Texto Agregado" 
+        url ="https://www7.cuevana3.ch/2809/cars" 
+        name= "Cars"
+        url1 ="https://www.cuevanahd.net/pelicula/cars-2-una-nueva-aventura-sobre-ruedas/"
+        name1 = "Cars2"/>
     </Page>
     </>
     );
