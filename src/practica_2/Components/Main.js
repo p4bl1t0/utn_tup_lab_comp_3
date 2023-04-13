@@ -3,18 +3,21 @@
 
 import Body from "./Body";
 
-const Main = ({pageBody, url}) => {
+const Main = ({pageBody, Links}) => {
     return ( 
     <div>
+      <Body pageBody = {pageBody}/>
         <nav>
           <ul>
+              <link><a href= {Links[1]}></a></link>
+              <link><a href= {Links[0]}></a></link>
           </ul>
         </nav>
-        <Body pageBody = {pageBody}>
-        </Body>
     </div>
 
 
+//<li> <a href={Links.map((item) => item.url)}></a></li>
+//<li> <a href={Links.map((item) => item.url1)}></a></li>
     )
 }
 

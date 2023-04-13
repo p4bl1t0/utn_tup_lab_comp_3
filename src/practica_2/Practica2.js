@@ -9,18 +9,6 @@ const site = {
     pageBody: 'Implementación de árbol de componentes y propiedades en React.'
 };
 
-const Links = [
-        {
-            id: 1,
-            url: "https://frro.cvg.utn.edu.ar/"
-        },
-        {
-            id: 2,
-            url: "https://github.com/MarceloFracassi/utn_tup_lab_comp_3"
-        }
-];
-
-
 
 export default function Practica2 () {
     return (
@@ -28,7 +16,7 @@ export default function Practica2 () {
             <Title pageTitle={site.pageTitle}></Title>
             <Body pageBody={site.pageBody}></Body>
             <Header pageTitle = {site.pageTitle}/>
-            <Main pageBody={site.pageBody} url={Links}></Main>
+            <Main pageBody={site.pageBody} Links={["https://frro.cvg.utn.edu.ar/","https://github.com/MarceloFracassi/utn_tup_lab_comp_3"]}></Main>
         </div>
     );
 }
