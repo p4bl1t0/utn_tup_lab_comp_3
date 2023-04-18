@@ -1,10 +1,15 @@
 import React from 'react'
+import Body from './Body'
 import BlogPost from './BlogPost'
+import '../CSS/main.css'
 
 
-const Main = ({pageBody, links}) => {
+const Main = ({pageBody,links}) => {
   return (
     <div>
+        <div className='bodySite'>
+          <Body body={pageBody}/>
+        </div>
         <BlogPost/>
         <nav>
             <ul>
