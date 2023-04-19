@@ -1,0 +1,6 @@
+.main {
+    text-transform: uppercase;
+    font-style: italic;
+    border: 1px solid #000;
+    padding: 3px;
+}
