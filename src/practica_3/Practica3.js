@@ -19,6 +19,8 @@ import { useState } from "react";
 
         const buttonClickHandler = (event) => {
           event.preventDefault();
+          const __arr = [...array];
+
           if (enteredInput === "") 
           {
             alert("Array vacio")
@@ -26,9 +28,9 @@ import { useState } from "react";
           } 
           else 
           {
-            array.push(enteredInput);
-            setArray(array);
-            console.log(array);
+            __arr.push(enteredInput);
+            setArray(__arr);
+            console.log(__arr);
             setEnteredInput("");
           }
         };
@@ -39,7 +41,7 @@ import { useState } from "react";
             <h3>Práctica 3</h3>
             <input type="text" placeholder="Ingrese el texto" value={enteredInput} onChange={enteredInputHandler}/>
             <button type="button" onClick={buttonClickHandler}> Agregar </button>
-            <List array={array}/>
+            <List __arr={array}/>
 
           </>
         );
