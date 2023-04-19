@@ -9,7 +9,7 @@ export default function Practica3() {
 
   const handleOnChange = (e) => {
     setInputValue(e.target.value);
-    console.log("Value handleChange: " + inputValue);
+ 
   };
 
   const handleDelete = (index) => {

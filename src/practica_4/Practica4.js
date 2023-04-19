@@ -1,23 +1,44 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function Practica4() {
   const inputRef = useRef();
 
   const [inputValue, setinputValue] = useState(Math.round(Math.random()));
   const [checkValue, setCheckValue] = useState(0);
+  const [select, setselect] = useState();
+  const [result, setResult] = useState();
+  const { getAnd, getNand, getNor, getOr, getXor } = useGates();
+
+  useEffect(() => {
+    switch (select) {
+      case "or":
+        setResult(getOr(inputValue, checkValue));
+        break;
+      case "and":
+        setResult(getAnd(inputValue, checkValue));
+        break;
+      case "nand":
+        setResult(getNand(inputValue, checkValue));
+        break;
+      case "nor":
+        setResult(getNor(inputValue, checkValue));
+        break;
+      case "xor":
+        setResult(getXor(inputValue, checkValue));
+        break;
+
+      default:
+        break;
+    }
+  }, [checkValue, inputValue]);
 
   const handleInput = (e) => {
     const value = Number(e.target.value);
-    console.log('afuera: ' +  inputValue);
 
-
-    if ((value === 0) || (value === 1)) {
-      console.log('adentro: ' +  inputValue);
+    if (value === 0 || value === 1) {
       setinputValue(value);
     } else {
       setinputValue(0);
-      console.log('else: ' +  inputValue);
-
     }
   };
 
@@ -26,22 +47,17 @@ export default function Practica4() {
     setCheckValue(isChecked ? 1 : 0);
   };
 
-  const options = [
-    { value: "or", label: "Or" },
-    { value: "nand", label: "Nand" },
-    { value: "and", label: "And" },
-    { value: "nor", label: "Nor" },
-    { value: "xor", label: "Xor" },
-  ];
+  const handleGates = (e) => {
+    const value = e.target.select;
+    setselect(value);
+  };
 
   return (
     <div className="App">
-
       <div>
         <label htmlFor="input1">Entrada 1:</label>
-        <input type="number"  id="input1"  onChange={handleInput} />
+        <input type="number" id="input1" onChange={handleInput} />
       </div>
-
 
       <div>
         <label>
@@ -49,22 +65,30 @@ export default function Practica4() {
         </label>
       </div>
 
-
       <div>
         <label htmlFor="selectGate">Compuerta lógica:</label>
 
-        <select>
-          <option id="optionGate">or</option>
-          <option id="optionGate1">and</option>
-          <option id="optionGate2">nand</option>
-          <option id="optionGate3">nor</option>
-          <option id="optionGate4">xor</option>
+        <select onChange={handleGates}>
+          <option value={"or"} id="optionGate">
+            or
+          </option>
+          <option value={"and"} id="optionGate1">
+            and
+          </option>
+          <option value={"nand"} id="optionGate2">
+            nand
+          </option>
+          <option value={"nor"} id="optionGate3">
+            nor
+          </option>
+          <option value={"xor"} id="optionGate4">
+            xor
+          </option>
         </select>
       </div>
 
-      
       <div>
-        <span>Salida: {inputValue}</span>
+        <span>Salida: {logicGate}</span>
       </div>
     </div>
   );
