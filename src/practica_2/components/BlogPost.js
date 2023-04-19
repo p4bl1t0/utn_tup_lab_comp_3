@@ -7,7 +7,7 @@ const BlogPost = ({title, body}) => {
 
   return (
     <div>
-      <Title title = {title}/>
+      <Title title= {title}/>
       <Body body = {body} />
     </div>
   )

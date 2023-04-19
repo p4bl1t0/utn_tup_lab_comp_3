@@ -1,3 +1,4 @@
+import BlogPost from "./components/BlogPost";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Page from "./components/Page";
