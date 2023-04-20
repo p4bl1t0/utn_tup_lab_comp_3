@@ -2,7 +2,7 @@
 
 const Body =  ({pageBody}) => {
     return (
-        <div>{pageBody}</div>
+        <div><h1>{pageBody}</h1></div>
     )
 }
 

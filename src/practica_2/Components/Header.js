@@ -16,3 +16,4 @@ export default Header;
 
 //Crear el componente `Header` que importará el componente `Title` y recibirá como propiedad `pageTitle`
 //<Etiqueta propiedades = {valor} /> 
+//En este caso Tittle es hijo de Header.

@@ -3,7 +3,7 @@
 
 const Title = ({pageTitle}) => {
     return (
-        <h1> {pageTitle}</h1>
+        <div><h1> {pageTitle}</h1></div>
     )
 }
 

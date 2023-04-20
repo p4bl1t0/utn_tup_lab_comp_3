@@ -3,23 +3,25 @@
 
 import Body from "./Body";
 
-const Main = ({pageBody, Links}) => {
-    return ( 
-    <div>
-      <Body pageBody = {pageBody}/>
-        <nav>
-          <ul>
-              <link><a href= {Links[1]}></a></link>
-              <link><a href= {Links[0]}></a></link>
-          </ul>
-        </nav>
-    </div>
 
+const Main = ({pageBody, links}) => {
+    return (
+      <div>
+        <Body pageBody = {pageBody}/>
+          <nav>
+              <ul>
+                  <li>
+                    <a href={links[0]}>{links[0]}</a>
+                  </li>
+                  <li>
+                    <a href={links[1]}>{links[1]}</a>
+                  </li>
+              </ul>
+          </nav>
+      </div>
+  )
+  }
 
-//<li> <a href={Links.map((item) => item.url)}></a></li>
-//<li> <a href={Links.map((item) => item.url1)}></a></li>
-    )
-}
 
 
 export default Main;
