@@ -1,19 +1,22 @@
+import React from 'react'
 import Body from "./Body";
 
+const Main = ({pageBody, links}) => {
+  return (
+    <div>
+      <Body pageBody = {pageBody}/>
+        <nav>
+            <ul>
+                <li>
+                  <a href={links[0]}>{links[0]}</a>
+                </li>
+                <li>
+                  <a href={links[1]}>{links[1]}</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+  )
+}
 
-    const Main = (pageBody,links) => {
-        return (
-            <>
-              <Body pageBody={pageBody}/>
-              <nav>
-                <ul>
-                  <li><a href= {links[1]}></a></li>
-                  <li><a href= {links[0]}></a></li>
-                </ul>
-              </nav>
-            </>
-          );
-
-    }
-    
-export default Main;
+export default Main

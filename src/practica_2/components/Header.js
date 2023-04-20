@@ -1,7 +1,12 @@
-import Title from "./Title"
+import React from 'react'
+import Title from './Title'
 
 const Header = ({pageTitle}) => {
-    return <Title pageTitle={pageTitle} />
+  return (
+    <div>
+        <Title pageTitle={pageTitle}/>
+    </div>
+  )
 }
 
-export default Header;
+export default Header
