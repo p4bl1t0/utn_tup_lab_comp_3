@@ -11,11 +11,15 @@ function InputTask() {
     if (+inputValue) {
       setResult([
         ...result,
-        { inputValue: parseFloat(Math.round(inputValue)) },
+        {
+          inputValue:
+            parseFloat(Math.round(inputValue)) % 2 === 0 ? (
+              <p>{`${inputValue} is Pair.`}</p>
+            ) : (
+              <p>{`${inputValue} is Odd.`}</p>
+            ),
+        },
       ]);
-      {
-        inputValue % 2 === 0 ? <p>pair</p> : <p>odd</p>;
-      }
     } else if (inputValue !== "") {
       setResult([...result, { inputValue: inputValue }]);
     } else {
@@ -23,6 +27,12 @@ function InputTask() {
     }
 
     setInput("");
+  };
+  const deleteButtonHandler = () => {
+    setResult(result.splice());
+  };
+  const editButtonHandler = () => {
+    setResult("cambiado");
   };
   console.log(result);
   return (
@@ -33,10 +43,16 @@ function InputTask() {
         <button type="button" onClick={buttonSaveHandler}>
           Save Input
         </button>
+        <button type="button" onClick={deleteButtonHandler}>
+          Delete input
+        </button>
       </div>
       {result.map((e, i) => (
         <div key={i}>
           <h1>{e.inputValue}</h1>
+          <button type="button" onClick={editButtonHandler}>
+            EDIT
+          </button>
         </div>
       ))}
     </div>
