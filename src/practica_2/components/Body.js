@@ -1,8 +1,8 @@
 
-const Body = ({pageBody}) => {
+const Body = ({body}) => {
 
   return (
-    <div>{pageBody}</div>
+    <div>{body}</div>
   )
 }
 

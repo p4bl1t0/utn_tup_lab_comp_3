@@ -1,14 +1,9 @@
-import Page from "./Page"
 import Title from "./Title"
 
-const Header = ({pageTitle}) => {
+const Header = ({title}) => {
   return (
   <div>
-    <Page>
-
-      <Title pageTitle = {pageTitle} />
-  
-    </Page>
+      <Title title = {title} />    
   </div>  
     )
 }
