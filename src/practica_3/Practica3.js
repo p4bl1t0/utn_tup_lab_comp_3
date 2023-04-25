@@ -6,7 +6,7 @@ export default function Practica3 () {
     const [validInput, setValidInput] = useState(false);
     const pushArray= () =>{
         if (validInput){
-            if (inputValue % 1 !== 0) {
+            if (!isNaN(inputValue) && inputValue % 1 !== 0) {
                 setArray(array.concat(Math.round(inputValue))) ;
                 
             }else{
@@ -24,7 +24,23 @@ export default function Practica3 () {
         setInputValue(value1);
         setValidInput(value1 !=='');
       };
-      
+    
+      const deleteItem = (e) => {
+        const array2=[...array]
+        array2.splice(e,1)
+        setArray(array2)
+      }
+
+      const editItem= (e) =>{
+        const array2=[...array]
+        
+        console.log(array2[e])
+        if (isNaN(array2[e])) {
+            array2[e] = ""
+            setArray(array2)
+            console.log(array2)
+        }
+      }
 
     return (
         <div>
@@ -34,9 +50,13 @@ export default function Practica3 () {
             <ul>
                 {array.map((item, index)=>(
                     <li key={index}>
-                        {isNaN(item) ? <input type="text" value={item}/>:
-                        item % 2 === 0 ? item+'(even)' : item+'(odd)'}
-                        <button>Delete</button>
+                        {isNaN(item) 
+                        ? <input type="text" value={item}/> 
+                        : item % 2 === 0 
+                            ? item+'(even)' 
+                            : item+'(odd)'}
+                        <button onClick={()=>{deleteItem(index)}}>Delete</button>
+                        <button onClick={()=>{editItem(index)}}>Edit</button>
                     </li>
                 ))};
             </ul>
