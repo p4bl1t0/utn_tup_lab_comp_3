@@ -1,7 +1,10 @@
+import Form from './components/Form'
+
 export default function Practica3 () {
     return (
         <div>
-            <h3>Práctica 3</h3>
+            <h1>Items</h1>
+            <Form />
         </div>
     );
 }
