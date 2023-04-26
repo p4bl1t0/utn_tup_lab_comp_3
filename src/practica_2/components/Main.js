@@ -1,10 +1,10 @@
-import React from 'react'
-import Body from "./Body";
+import React from 'react';
+import Body from './Body';
 
 const Main = ({pageBody, links}) => {
   return (
     <div>
-      <Body pageBody = {pageBody}/>
+      <Body pageBody = {pageBody + ' ¡Gracias por visitar mi sitio web!'} />
         <nav>
             <ul>
                 <li>
@@ -19,4 +19,4 @@ const Main = ({pageBody, links}) => {
   )
 }
 
-export default Main
+export default Main;

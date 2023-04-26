@@ -1,0 +1,27 @@
+.testcss {
+    background-color: aliceblue;
+    border: 2px solid rgb(29, 28, 28);
+    margin: 10px;
+    padding: 5px;
+    width: 200px;
+    height: 300px;
+
+}
+
+.green {
+    background-color:rgb(61, 153, 61);
+    border-radius: 60px;
+    color: white;
+}
+
+.green:hover {
+    background-color:rgb(60, 101, 212);
+    border-radius: 60px;
+    color: white;
+}
+
+.App {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+}

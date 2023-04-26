@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 
 /*export default function Practica3() {
   const [array, setArray] = useState([]);
@@ -31,7 +30,7 @@ import React, { useState } from 'react';
   );
 }
 */
-
+import React, { useState } from 'react';
 export default function Practica3 () {
   //definir un array como state
   const [array, setArray]=useState([]);
@@ -50,6 +49,19 @@ export default function Practica3 () {
           alert("Debe rellenar el casillero")
       }
   }
+
+  const DeleteButtonHandler = (index) => {
+    const array2 = [...array]
+    array2.splice(index,1)
+    setArray(array2)
+  }
+  const ModifyButtonHandler = (value,index) => {
+    const array3 = [...array];
+    index=array3(value);
+    setArray(index);
+  }
+  
+
   
       return (
           <div>
@@ -59,9 +71,30 @@ export default function Practica3 () {
                   onChange={InputChangeHandler}
                   type="text"
               />
+             
+              
               <button onClick={ButtonClickHandler}>
                   Agregar
                   </button>
+
+              {array.map((value, index) => {
+                  return (
+                    <div key={index}>
+                      {typeof Number(value) === 'number' && !isNaN(value) ? (
+                        <div>{Math.round(value) % 2 === 0 ? 'Par' : 'Impar'}</div>
+                      ) : (
+                        <input type="text" value={value} readOnly />
+                        )}
+                      <button onClick={DeleteButtonHandler.bind(null,index)}>Eliminar
+                      </button>
+                      <button onClick={ModifyButtonHandler.bind(value,index)}>Modificar
+                      </button>
+                     
+                      
+                    </div>
+                  );
+              })}
           </div>
   )
   }
+
