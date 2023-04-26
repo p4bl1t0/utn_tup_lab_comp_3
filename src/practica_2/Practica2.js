@@ -10,6 +10,7 @@ const site = {
 export default function Practica2 () {
     return (
     <>  
+        
     <Page>
         <Header/>
         <Main 

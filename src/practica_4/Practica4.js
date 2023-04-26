@@ -1,9 +1,11 @@
 import { useRef } from "react";
 
+
 export default function Practica4 () {
     const inputRef = useRef();
     return (
         <div className="App">
+            
             <div>
                 <label for="input1">Entrada 1:</label>
                 <input type="number" id="input1" />
