@@ -5,7 +5,7 @@ const Main = ({pageBody}) =>{
                 <p>Mi primer contacto con React!</p>
                 <ul>
                     <li><a href="https://www.youtube.com/" target="blank">Youtube</a></li>
-                    <li><a href="https://www.github.com/">Github</a></li>
+                    <li><a href="https://www.github.com/" target="blank">Github</a></li>
                 </ul>
             </div>
             
