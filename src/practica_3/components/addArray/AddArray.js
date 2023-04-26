@@ -42,6 +42,7 @@ const AddArray = () => {
     console.log(arrayModify);
     settArray(copyArray);
   }
+  
   return (
     <>
       <label>Ingresar Valor para el arreglo</label>
@@ -51,8 +52,9 @@ const AddArray = () => {
       <ul> 
         
         <li>Agregaste un numero:{showmensaje}</li>
-        <li>Agregaste el texto</li>
+       {array.map((item) =>( <li> {item}</li> ))}
         <input type="text" disabled value={showText}></input>
+      
       </ul>
       <button onClick={deleteInputHandler}>Borrar</button>
       <button onClick={changeInputHandler}>Cambiar Dato</button>
