@@ -1,6 +1,6 @@
 
 import Title from "./Title"
-const Header = () =>{
+const Header= () =>{
   return (
     <header>
         <Title />

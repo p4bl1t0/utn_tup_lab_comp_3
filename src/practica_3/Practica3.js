@@ -1,7 +1,13 @@
-export default function Practica3 () {
-    return (
-        <div>
-            <h3>Práctica 3</h3>
-        </div>
-    );
+import AddArray from "./components/addArray/AddArray"
+
+const Practica3 = () => {
+  return (
+    <>
+    <h2>Practica3</h2>
+    <AddArray/>
+    
+    </>
+  )
 }
+
+export default Practica3 
