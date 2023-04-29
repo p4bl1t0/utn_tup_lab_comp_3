@@ -2,11 +2,10 @@ import { useState } from "react"
 const AddArray = () => {
   const[array, settArray] = useState([]);
   const[inputValue, setInputValue] = useState("");
-  const[showmensaje, setShowMensaje] = useState('');
-  const[showText, setShowText] = useState('');
-
+  const [CleanInput, setCleanInput] = useState();
   const inputChangeHandler = (event) =>{
     setInputValue(event.target.value);
+    setCleanInput()
   }
   
   const addValueHandler = () =>{
@@ -14,51 +13,55 @@ const AddArray = () => {
       
       if(Number.isInteger(parseInt(inputValue))){
         const numberRound = Math.round(parseInt(inputValue));
-        settArray(array.concat(numberRound));
+        
         if(numberRound % 2 === 0){   
-          setShowMensaje('Es par');
+          settArray(array.concat(numberRound + ':  Par'));
         }
           else{
-            setShowMensaje('Es impar');
+            settArray(array.concat(numberRound + ':  Impar'));
           }
       }else{
-        settArray(array.concat(inputValue));
-        setShowText(inputValue);
+        settArray(array.concat(inputValue + ':  No es un numero'));      
       } 
     } 
     else{
       console.log('NO SE PUEDE VACIO, PONE ALGO!!!!!');
     }
+    setCleanInput('');
+    setInputValue('');
   }
-  const deleteInputHandler = () =>{
-    console.log('clicked');
+  const deleteInputHandler = (index) =>{
     const copyArray = [...array];
-    copyArray.pop();
+    copyArray.splice(index, 1);
     settArray(copyArray);
   }
-  const changeInputHandler = () =>{
+  const changeInputHandler = (index) =>{
     const copyArray = [...array];
-    const arrayModify= copyArray[copyArray.length -1] = inputValue;
-    console.log(arrayModify);
-    settArray(copyArray);
+    copyArray[index] = inputValue;
+    if (inputValue.length > 0) {
+      settArray(copyArray);
+    }else{
+      console.log('NO SE PUEDE VACIO, PONE ALGO!!!!!');
+    }
   }
   
   return (
     <>
       <label>Ingresar Valor para el arreglo</label>
       <br /> 
-      <input type ='text'onChange={inputChangeHandler}></input>
-      <button onClick={addValueHandler}>Enviar</button>
+      <input type ='text'onChange={inputChangeHandler} value={CleanInput}></input>
+      <button onClick={addValueHandler}>Ingresar</button><br></br>
+      <button onClick={() => deleteInputHandler(0)}>Borrar 1</button>
+      <button onClick={() => changeInputHandler(0)}>Cambiar Dato 1</button>
       <ul> 
-        
-        <li>Agregaste un numero:{showmensaje}</li>
-       {array.map((item) =>( <li> {item}</li> ))}
-        <input type="text" disabled value={showText}></input>
+       {array.map((item, index) =>( 
+            <li> 
+              {item}
+              <button onClick={() => deleteInputHandler(index)}>Borrar</button>
+              <button onClick={() => changeInputHandler(index)}>Cambiar Dato</button>
+            </li>))}
       
       </ul>
-      <button onClick={deleteInputHandler}>Borrar</button>
-      <button onClick={changeInputHandler}>Cambiar Dato</button>
-      <p>Arreglo:{array}</p>
     </>
   )
 }
