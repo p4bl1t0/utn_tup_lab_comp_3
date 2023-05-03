@@ -9,9 +9,9 @@ const Input = ({setInputValue, inputValue,setValidInput}) => {
       };
 
   return (
-    <div>
+    <>
         <input type="text" value={inputValue} onChange={handleChange}/>
-    </div>
+    </>
   )
 }
 
