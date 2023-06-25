@@ -1,49 +1,71 @@
-
-import List from "./List";
-
 import { useState } from "react";
+import Listado from "./Listado";
 
-    export default function Practica3() {
+export default function Practica3() {
+  const [array, setArray] = useState([]);
+  const [enteredInput, setEnteredInput] = useState("");
 
-        const [array, setArray] = useState([]);
+  const enteredInputHandler = (event) => {
+    setEnteredInput(event.target.value);
+  };
 
-        const [enteredInput, setEnteredInput] = useState("");
-        
-// handler input
+  //Funcion agregar elementos al arreglo
 
-        const enteredInputHandler = (event) => {
-          setEnteredInput(event.target.value);
-        };
+  const buttonClickHandler = (event) => {
+    event.preventDefault();
+    if (enteredInput === "") {
+      alert("Ingrese algo no vacio");
+      setEnteredInput("");
+    } else {
+      array.push(enteredInput);
+      setArray(array);
+      console.log(array);
+      setEnteredInput("");
+    }
+  };
 
-// add button handler
+  //Funcion eliminar elemento del array
 
-        const buttonClickHandler = (event) => {
-          event.preventDefault();
-          const __arr = [...array];
+  const onClickDeleteHandler = (index) => {
+    let newArray = [...array];
+    newArray.splice(index, 1);
+    setArray(newArray);
+  };
 
-          if (enteredInput === "") 
-          {
-            alert("Array vacio")
-            setEnteredInput("");
-          } 
-          else 
-          {
-            __arr.push(enteredInput);
-            setArray(__arr);
-            console.log(__arr);
-            setEnteredInput("");
-          }
-        };
-      
-    
-        return (
-          <>
-            <h3>Práctica 3</h3>
-            <input type="text" placeholder="Ingrese el texto" value={enteredInput} onChange={enteredInputHandler}/>
-            <button type="button" onClick={buttonClickHandler}> Agregar </button>
-            <List __arr={array}/>
+  //Funcion editar elementos del arreglo
 
-          </>
-        );
-    
+  const onClickEditHandler = (index, newValue) => {
+    let newArray = [...array];
+    //newArray.splice(index, 1, newValue);
+    newArray[index] = newValue;
+    setArray(newArray);
+  };
+
+  // Funcion mostrar datos en consola
+
+  const consoleLogHandler = () => {
+    console.log(array);
+  };
+
+  return (
+    <>
+      <h3>Práctica 3</h3>
+      <input
+        type="text"
+        placeholder="Ingrese el texto"
+        value={enteredInput}
+        onChange={enteredInputHandler}
+      />
+      <button type="button" onClick={buttonClickHandler}>
+        {" "}
+        Agregar{" "}
+      </button>
+      <button onClick={consoleLogHandler}>Mostrar datos</button>
+      <Listado
+        array={array}
+        deleteElement={onClickDeleteHandler}
+        editElement={onClickEditHandler}
+      />
+    </>
+  );
 }
