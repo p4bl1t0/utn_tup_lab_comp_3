@@ -1,6 +1,6 @@
 import Title from "./Title";
 
-const Header = (pageTitle) => {
+const Header = ({pageTitle}) => {
     return (
         <Title pageTitle = {pageTitle}>                    
 

@@ -1,27 +1,15 @@
 import React, { useState } from "react";
+import Input from "./Componets/Input";
+import Button from "./Componets/Button";
+
 export default function Practica3() {
   //definir un array como state
   const [Array, setArray] = useState([]);
   //Agregar input
   const [inputValue, setInputValue] = useState("");
   //editar
-  const [validInput, setValidInput] = useState(false);
-
-  const InputChangeHandler = (e) => {
-    const value1 = (e.target.value1);
-    setInputValue(e.target.value1);
-    setValidInput(value1 !=='');
-  };
-  const ButtonClickHandler = () => {
-    if (inputValue !== " ") {
-      const _arr = [...Array];
-      _arr.push(inputValue);
-      setArray(_arr);
-      setInputValue(" "); //Limpia input
-    } else {
-      alert("Debe rellenar el casillero");
-    }
-  };
+  const [validInput, setValidInput] = useState("");
+  
   const ButtonClickHandler1 = (index) => {
     const deleteArr = [...Array];
     deleteArr.splice(index, 1);
@@ -36,7 +24,7 @@ const editItem= (index) =>{
             array2[index] = inputValue;
             setArray(array2);
             setInputValue("");
-            setValidInput(false);
+            setValidInput("");
           } else {
             alert("No hay valor editado");
           }
@@ -46,8 +34,8 @@ const editItem= (index) =>{
   return (
     <div>
       <h3>Práctica 3</h3>
-      <input value={inputValue} onChange={InputChangeHandler} type="text" />
-      <button onClick={ButtonClickHandler}>Agregar</button>
+      <Input setInputValue={setInputValue} setValidInput ={setValidInput} inputValue={inputValue}/>
+      <Button inputValue={inputValue} setInputValue={setInputValue} setArray={setArray} Array={Array} />
 
       {Array.map((value, index) => {  //Mapeo del arreglo
         return (
@@ -57,10 +45,8 @@ const editItem= (index) =>{
             ) : (
               <input type="text" value={value} readOnly />
             )}
-            <button onClick={ButtonClickHandler1.bind(null, index)}>
-              Borrar
-            </button>
-            <button onClick={()=>{editItem(index)}}>Editar</button>
+            <button onClick={ButtonClickHandler1.bind(null, index)}> Borrar</button>
+            <button onClick={()=>{editItem(index)}}> Editar</button>
 
           </div>
         );

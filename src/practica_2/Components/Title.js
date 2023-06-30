@@ -8,3 +8,4 @@ const Title = ({pageTitle}) => {
 }
 
 export default Title;
+

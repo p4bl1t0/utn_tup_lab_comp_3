@@ -14,8 +14,6 @@ const site = {
 export default function Practica2 () {
     return (
         <div>
-            <Title pageTitle={site.pageTitle}></Title>
-            <Body pageBody={site.pageBody}></Body>
             <Header pageTitle = {site.pageTitle}/>
             <Main pageBody={site.pageBody} links={site.links}/>
         </div>
