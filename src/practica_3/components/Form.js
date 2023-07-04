@@ -10,14 +10,22 @@ const Form = () => {
     // Mensaje de error
     const [ error, setError ] = useState(false);
 
+
     const onInputChange = (e) => {
       setInputValue(e.target.value);
     };
 
-    const handleDeleteItem = (i) => {
-        const newItems = array.filter(item => item !== i);
-        setArray(newItems);
-      };
+    const handleDeleteItem = (i) => {    
+      const newArray = array.filter(item => item.value !== i)
+      setArray(newArray)
+    };
+    
+
+    const handleEditItem = (i) => {
+      const newEdit = array.map(item => item.value === i ? {type: "text", value: inputValue.trim() } : item)       
+      setArray(newEdit);
+      console.log(newEdit)
+    }  
 
     const buttonClickHandler = () => {
       if (inputValue.trim() !== "") {
@@ -30,7 +38,6 @@ const Form = () => {
         };
         setArray([...array, newArray]);
         setInputValue("");
-        console.log(newArray);
       } else {
         setError(true);
         setTimeout(() => {
@@ -52,13 +59,14 @@ const Form = () => {
       <ul>
         {array.map((item, index) => (
             <>
-          <li key={index}>            
+          <li key={index.id}>            
             {typeof item.value === "number" ? (
-              `${item.value} es ${item.value % 2 === 0 ? "Par" : "Impar"}`
+              `${item.value} es ${item.value % 2 === 0 ? "Par " : "Impar "}`
             ) : (
               <input type="text" value={item.value} readOnly />
             )}
             <button onClick={() => handleDeleteItem(item.value)}>Borrar</button>
+            <button onClick={() => handleEditItem(item.value)}>Editar</button>
           </li>          
           </>
 
