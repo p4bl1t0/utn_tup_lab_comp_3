@@ -15,8 +15,20 @@ const List = ({array,setArray, inputValue,setInputValue, validInput, setValidInp
                     : item % 2 === 0 
                         ? item+'(even)' 
                         : item+'(odd)'}
-                    <ButtonDelete array={array} setArray={setArray} index={index} />
-                    <ButtonEdit array={array} setArray={setArray} inputValue={inputValue} setInputValue={setInputValue} validInput={validInput} setValidInput={setValidInput} index={index}/>
+                    <ButtonDelete 
+                    array={array} 
+                    setArray={setArray} 
+                    index={index} />
+                    {isNaN(item)&& 
+                    <ButtonEdit 
+                    array={array} 
+                    setArray={setArray} 
+                    inputValue={inputValue} 
+                    setInputValue={setInputValue} 
+                    validInput={validInput} 
+                    setValidInput={setValidInput} 
+                    index={index}/>}
+                    
                 </li>
             ))};
         </ul>
