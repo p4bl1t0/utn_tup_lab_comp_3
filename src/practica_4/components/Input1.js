@@ -1,26 +1,22 @@
-import React, { useState } from 'react';
+import { useRef } from "react";
 
-// Componente para el input1
-const Input1 = ({ setInput1 }) => {
-  const [value, setValue] = useState(Math.round(Math.random())); // Valor inicial random (0 o 1)
 
-  const handleChange = (e) => {
-    const inputValue = parseInt(e.target.value);
-    if (inputValue === 0 || inputValue === 1) {
-      setValue(inputValue);
-      setInput1(inputValue);
-    } else {
-      setValue(0);
-      setInput1(0);
-    }
-  };
+const Input1 = ({input1, setInput1}) => {
+
+  const inputRef = useRef();
+  const guardarValor = () => {
+    const value = inputRef.current.value
+    console.log(parseInt(value))
+    setInput1(value == true ? 1 : 0 );
+}
+
 
   return (
-    <div>
-      <label>Input 1:</label>
-      <input type="number" value={value} onChange={handleChange} />
+    <div> 
+      <label for="input1">Entrada 1</label>
+      <input ref={inputRef} value={input1} onChange={guardarValor} type="number" id="input1" />
     </div>
-  );
-};
+  )
+}
 
-export default Input1;
+export default Input1

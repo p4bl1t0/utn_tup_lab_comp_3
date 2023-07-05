@@ -1,20 +1,22 @@
-import React from 'react'
-import  { useState } from 'react';
-const Input2 = ({ setCheckbox }) => {
-    const handleChange = (e) => {
-      const value = e.target.checked ? 1 : 0;
-      setCheckbox(value);
-    };
-  
-    return (
-      <div>
-        <label>
-          <input type="checkbox" onChange={handleChange} />
-          Input 2
-        </label>
-      </div>
-    );
-  };
-  
+import { useRef } from "react";
 
-export default Input2;
+
+const Input2 = ({ setInput2}) => {
+    const inputRef2 = useRef();
+    const  guardarValorCheck = () => {
+        const valueCheck = inputRef2.current.checked;
+        console.log(valueCheck)
+        
+        setInput2( valueCheck=== true ? 1 : 0 );
+      
+    }
+
+  return (
+    <div>
+        <label>Entrada 2 </label>
+        <input ref={inputRef2} onChange={guardarValorCheck} type="checkbox" />
+    </div>
+  )
+}
+
+export default Input2

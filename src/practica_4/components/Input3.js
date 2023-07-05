@@ -1,27 +1,21 @@
+import { useRef } from "react";
 
 
-import React, { useState } from 'react';
+const Input3 = ({setInput3, input3}) => {
+    const inputRef3 = useRef();
 
-const Input3 = ({ setInput3 }) => {
-  const [value, setValue] = useState(0);
-
-  const handleChange = (e) => {
-    const inputValue = parseInt(e.target.value);
-    if (inputValue === 0 || inputValue === 1) {
-      setValue(inputValue);
-      setInput3(inputValue);
-    } else {
-      setValue(0);
-      setInput3(0);
+    const  guardarValorRange = () => {
+        const valueRange = inputRef3.current.value;
+        setInput3( valueRange == true ? 1 : 0 );
+        
     }
-  };
-
+    
   return (
-    <div>
-      <label>Input 3:</label>
-      <input type="number" value={value} onChange={handleChange} />
+    <div>   
+        <label>Entrada 3 </label>
+        <input ref={inputRef3} value={input3} onChange={guardarValorRange} type='select'></input>
     </div>
-  );
+  )
 }
 
-export default Input3;
+export default Input3

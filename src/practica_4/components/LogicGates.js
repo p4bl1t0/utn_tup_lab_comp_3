@@ -1,21 +1,36 @@
-import React from 'react'
+import React, { useEffect } from "react";
 
-const LogicGates = ({ input1, input2, input3, selectedGate }) => {
-    const gates = {
-      or: input1 || input2 || input3,
-      and: input1 && input2 && input3,
-      nand: !(input1 && input2 && input3),
-      nor: !(input1 || input2 || input3),
-      xor: (input1 !== input2) !== input3,
-    };
-  
-    const result = gates[selectedGate] ? 1 : 0;
-  
-    return (
-      <div>
-        <h3>Resultado: {result}</h3>
-      </div>
-    );
-  };
 
-export default LogicGates
+function LogicGates ({ input3 , input1 , input2 ,input4 , select , setResultado , resultado }) {
+ 
+
+    useEffect(() => {
+        
+        switch (select)  {
+          case "or":
+           
+            setResultado(input3 || input2 || input1 || input4  ? "true" : "false");
+            break;
+          case "and":
+            setResultado(input1 && input2 && input3 && input4 ? "true" : "false");
+            break;
+          case "nand":
+            setResultado(input1 || input2 || input3 || input4 ? "false" : "true");
+            break;
+          case "nor":
+            setResultado(input1 && input2 && input3 && input4 ? "false" : "true");
+            break;
+          default:
+            setResultado(input1 + input2 + input3 + input4 % 2 === 1  ? "true" : "false");
+            
+        }
+      }, [input1, select, input2, input3, input4, setResultado]);
+
+      return(
+        <div><span>Salida: {resultado}</span></div>
+      )
+
+      
+}
+
+export default LogicGates;
