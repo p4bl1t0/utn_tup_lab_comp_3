@@ -1,0 +1,15 @@
+.AppPractica4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.logicGates {
+    border: 1px solid #000;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 1em;
+    width: 50%;
+}
