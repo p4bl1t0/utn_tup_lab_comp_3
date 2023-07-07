@@ -124,16 +124,20 @@ const watchList = [
 ];
 
 const filterMovies = (watchlist) => {
-    // Aquí adentro escriban la función para filtrar
-	return [];
+
+    return watchlist.filter ((item) => (
+    	 item.Director === 'Christopher Nolan' && Number(item.imdbRating) >8.0
+	));
 }
-const returnMovieTitle = (watchlist) => {
-    // Aquí adentro escriban la función para mostrar titulo
-	return [];
+const returnMovieTitle = (watchList) => {
+		return watchList.map ((item) => (
+			item.Title
+		));
 }
 const sumOfDuration = (watchlist) => {
-    // Aquí adentro escriban la función para sumarizar
-	return 0;
+		return watchList.reduce((previousSum, film )=>((previousSum + parseInt(film.Runtime,10))), 0);
+		//watchList.reduce((previousSum, currentMovie) =>
+		//{return (previousSum + parseInt(currentMovie.Runtime,10))}, 0);
 }
 export default function Practica1 () {
 	let moviesFiltered = filterMovies(watchList);
