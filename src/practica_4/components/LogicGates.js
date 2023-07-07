@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 
 function LogicGates ({ input3 , input1 , input2 ,input4 , select , setResultado , resultado }) {
