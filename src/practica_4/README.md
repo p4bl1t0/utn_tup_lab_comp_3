@@ -28,5 +28,5 @@ Considerando el JSX brindado en `Practica4.js`
 - Cambiar lo necesario en `LogicGates` para que al calcularse un nuevo valor de compuerta pueda ser usado por un componente que lo esté invocando.
 - Agregar dos nuevos inputs en Practica4.js (type `range` y `radio`) para capturar dos entradas más 0 o 1.
 - Utilizar `LogicGates` para aplicar una compuerta lógica a estas 2 nuevas entradas
-- Utilizar `LogicGates` para aplicar una compuerta lógica a las 2 `LogicGates` previamente calculadas.
+- Utilizar `LogicGates` para aplicar una     a las 2 `LogicGates` previamente calculadas.
 - Bonus: Utilizar CSS y HTML adicional para que el formulario quede lo más claro posible en términos de visualización.
