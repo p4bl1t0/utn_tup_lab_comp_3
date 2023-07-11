@@ -8,8 +8,9 @@ function App() {
   const [practiceSelected, setPracticeSelected] = useState('#practica_1');
   return (
     <div>
-      <Menu onOptionSelected={(t) => { setPracticeSelected(t) }} />
-      <MainContent practiceSelected={practiceSelected} />
+       <Menu onOptionSelected={(t) => { setPracticeSelected(t) }} />
+      <MainContent practiceSelected={practiceSelected} /> 
+      {/* <Test/> */}
     </div>
   );
 }

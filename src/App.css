@@ -12,3 +12,60 @@
 .body-page {
   font-style: italic;
 }
+
+
+.title{
+  color: rgb(233, 206, 206);
+    font-weight: 600;
+}
+li{
+  list-style: none;
+}
+.nav-item{
+  color:darkgrey;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+
+}
+.container{
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.list-item{
+  color: antiquewhite;
+  font-family: monospace;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+.input{
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+ 
+}
+.button{
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+.list-item-2{
+  color: antiquewhite;
+  font-family: monospace;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  gap: 5px;
+  background-color: slategrey;
+  padding: 10px 20px ;
+  border-radius: 15px;
+}
