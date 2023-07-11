@@ -2,7 +2,7 @@ import Title from "./Title";
 
 const Header = ({pageTitle}) => {
   return (
-    <div>
+    <div className="container">
       <Title pageTitle={pageTitle} />
     </div>
   );

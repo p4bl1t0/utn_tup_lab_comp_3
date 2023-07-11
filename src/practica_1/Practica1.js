@@ -1,3 +1,5 @@
+import '../App.css'
+
 const watchList = [
   {
     Title: "Inception",
@@ -156,11 +158,11 @@ export default function Practica1() {
     titlesArray = [];
   }
   return (
-    <div>
-      <p>Películas de Christopher Nolan: {durationSum} minutos</p>
+    <div className='container'>
+      <p className="title">Películas de Christopher Nolan: {durationSum} minutos</p>
       <ul>
         {titlesArray.map((item, index) => (
-          <li key={index}>{item}</li>
+          <li className='list-item' key={index}>- {item}</li>
         ))}
       </ul>
     </div>

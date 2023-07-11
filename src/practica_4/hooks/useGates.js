@@ -1,4 +1,6 @@
 const useGates = () => {
+
+//Hay 3 mil modificaciones para hacer y reducir muchas lineas de codigo pero ando con poco tiempo y lo tenia hecho asi.
   const getOr = (num1, num2) => {
     if (num1 === 0 && num2 === 0) {
       return 0;
@@ -42,3 +44,5 @@ const useGates = () => {
 
   return {getAnd, getNand,getNor,getOr,getXor}
 };
+
+export default useGates;

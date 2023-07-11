@@ -1,4 +1,5 @@
+import '../../App.css'
 const Page = ({ children }) => {
-  return <div>{children}</div>;
+  return <div className=".container">{children}</div>;
 };
 export default Page;

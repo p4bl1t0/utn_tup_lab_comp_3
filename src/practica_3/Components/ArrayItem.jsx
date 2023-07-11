@@ -21,7 +21,7 @@ const ArrayItem = ({
   return (
     <div style={{ position: "relative" }}>
       <ul style={{ display: "flex", gap: "20px", flexDirection: "column" }}>
-        {array  &&
+        {array &&
           newArray.map((item, i) => {
             return (
               <li style={{ listStyle: "none" }} key={i}>
@@ -51,14 +51,11 @@ const ArrayItem = ({
           })}
       </ul>
       {showModal.show && (
-        <form
-          style={{ position: "absolute" }}
-         
-        >
+        <form style={{ position: "absolute" }}>
           {" "}
           <label htmlFor="new-value">Ingrese el nuevo valor:</label>
           <input onChange={handleOnChange} name="new-value" type="text" />{" "}
-          <button onClick={() => submitEdit(newValue)} >Finalizar cambio</button>
+          <button onClick={() => submitEdit(newValue)}>Finalizar cambio</button>
         </form>
       )}
     </div>

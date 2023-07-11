@@ -1,4 +1,4 @@
 const Body = ({ pageBody }) => {
-  return <div > {pageBody} </div>;
+  return <div className="list-item" > {pageBody} </div>;
 };
 export default Body;

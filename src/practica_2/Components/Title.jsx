@@ -1,6 +1,6 @@
 const Title = ({pageTitle}) => {
   return (
-    <h1>{pageTitle}</h1>
+    <h1 className="title">{pageTitle}</h1>
   )
 }
 export default Title
