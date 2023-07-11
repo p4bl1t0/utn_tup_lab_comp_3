@@ -7,7 +7,7 @@ import './App.css';
 const App = () => {
   const site = 'Mi sitio web';
   const links = ['Inicio', 'Acerca de'];
-  const pageBody = 'Bienvenido a mi sitio web!';
+  const pageBody = 'Bienvenido/a a mi pagina';
 
   return (
     <div className="menu">

@@ -144,7 +144,7 @@ export default function Practica1 () {
 	let moviesFiltered = filterMovies(watchList);
     let titlesArray = returnMovieTitle(moviesFiltered);
     let durationSum = sumOfDuration(moviesFiltered);
-    console.log(titlesArray);
+    
 	
     if (!Array.isArray(titlesArray)) {
         titlesArray = [];
