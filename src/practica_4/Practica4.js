@@ -1,23 +1,31 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import LogicGates from "./components/LogicGates";
+import Input from "./components/Input";
+import Checkbox from "./components/Checkbox";
 
 export default function Practica4() {
   const [inputValue, setInputValue] = useState("0");
   const [checkboxValue, setCheckboxValue] = useState(0);
-  const [selectedOption, setSelectedOption] = useState("");
-  const [result, setResult] = useState("0");
+  const [inputValue2, setInputValue2] = useState("0");
+  const [inputValue3, setInputValue3] = useState("0");
+  const [firstResult, setFirstResult] = useState("0");
+  const [secondResult, setSecondResult] = useState("0");
+  const [thirdResult, setThirdResult] = useState("0");
 
   const handleChangeInput = (e) => {
     const value1 = e.target.value;
     setInputValue(value1);
   };
+
   const handleBlur = (e) => {
     const value1 = parseInt(e.target.value);
     if (value1 === 1 || value1 === 0) {
-      setInputValue(value1);
+      setInputValue(value1.toString());
     } else {
-      setInputValue(0);
+      setInputValue("0");
     }
   };
+
   const handleChangeCheckBox = (e) => {
     const check = e.target.checked;
     if (check === true) {
@@ -26,68 +34,93 @@ export default function Practica4() {
       setCheckboxValue(0);
     }
   };
-  const handleSelectChange = (e) => {
-    const select1 = e.target.value;
-    setSelectedOption(select1);
-    if (select1 === "OR") {
-    (inputValue === 1 || checkboxValue === 1)
-    ?setResult(1)
-    :setResult(0)
-    } else if (select1 === "AND") {
-      setResult(inputValue && checkboxValue);
-    } else if (select1 === "NAND") {
-      !(inputValue && checkboxValue)
-      ?setResult(1)
-      :setResult(0)
-    } else if (select1 === "NOR") {
-      !(inputValue || checkboxValue)
-      ?setResult(1)
-      :setResult(0)
-    } else {
-        (inputValue && !checkboxValue) || (!inputValue && checkboxValue)
-        ?setResult(1)
-        :setResult(0)
-    }
+
+  const handleChangeInput2 = (e) => {
+    const value2 = e.target.value;
+    setInputValue2(value2);
+  };
+
+  const handleChangeInput3 = (e) => {
+    const value3 = e.target.value;
+    setInputValue3(value3);
   };
 
   return (
     <div className="App">
+      <h3>Calcular resultado de entrada 1 y 2</h3>
       <div>
-        <label htmlFor="input1">Entrada 1:</label>
-        <input
-          type="number"
-          id="input1"
-          value={inputValue}
-          onChange={handleChangeInput}
-          onBlur={handleBlur}
+        <Input
+          inputValue={inputValue}
+          handleChangeInput={handleChangeInput}
+          handleBlur={handleBlur}
         />
       </div>
       <div>
-        <label>
-          <input
-            type="checkbox"
-            checked={checkboxValue}
-            onChange={handleChangeCheckBox}
-          />{" "}
-          Entrada 2
-        </label>
+        <Checkbox
+          checkboxValue={checkboxValue}
+          handleChangeCheckBox={handleChangeCheckBox}
+        />
       </div>
       <div>
-        <label htmlFor="selectGate">Compuerta lógica:</label>
-        <select
-          id="selectGate"
-          value={selectedOption}
-          onChange={handleSelectChange}
-        >
-          <option value="OR">OR</option>
-          <option value="AND">AND</option>
-          <option value="NAND">NAND</option>
-          <option value="NOR">NOR</option>
-          <option value="XOR">XOR</option>
-        </select>
+        <LogicGates
+          setResult={setFirstResult}
+          inputValue={inputValue}
+          checkboxValue={checkboxValue}
+        />
+      </div>
+      <span>Salida: {firstResult}</span>
+      <h3>Calcular Resultado de la entrada 3 y 4</h3>
+      <div>
+        <label htmlFor="input2">Entrada 3:</label>
+        <input
+          id="input2"
+          type="range"
+          min="0"
+          max="1"
+          step="1"
+          value={inputValue2}
+          onChange={handleChangeInput2}
+        />
       </div>
       <div>
-        <span>Salida: {result}</span>
+        <label htmlFor="input3">Entrada 4:</label>
+        <input
+          id="input3"
+          type="radio"
+          name="input3"
+          value="0"
+          checked={inputValue3 === "0"}
+          onChange={handleChangeInput3}
+        />
+        <label htmlFor="input3-0">0</label>
+        <input
+          id="input3-1"
+          type="radio"
+          name="input3"
+          value="1"
+          checked={inputValue3 === "1"}
+          onChange={handleChangeInput3}
+        />
+        <label htmlFor="input3-1">1</label>
+      </div>
+      <div>
+        <LogicGates
+          setResult={setSecondResult}
+          inputValue={inputValue2}
+          checkboxValue={inputValue3}
+        />
+      </div>
+      <span>Salida: {secondResult}</span>
+      <div>
+        <h3>Calcular resultado de las 4 entradas</h3>
+        <LogicGates
+          setResult={setThirdResult}
+          inputValue={firstResult}
+          checkboxValue={secondResult}
+        />
+      </div>
+      <div>
+        <span>Salida: {thirdResult}</span>
       </div>
     </div>
   );
