@@ -64,8 +64,8 @@ export default function Practica4() {
       <div>
         <LogicGates
           setResult={setFirstResult}
-          inputValue={inputValue}
-          checkboxValue={checkboxValue}
+          firstInput={inputValue}
+          secondInput={checkboxValue}
         />
       </div>
       <span>Salida: {firstResult}</span>
@@ -106,8 +106,8 @@ export default function Practica4() {
       <div>
         <LogicGates
           setResult={setSecondResult}
-          inputValue={inputValue2}
-          checkboxValue={inputValue3}
+          firstInput={inputValue2}
+          secondInput={inputValue3}
         />
       </div>
       <span>Salida: {secondResult}</span>
@@ -115,8 +115,8 @@ export default function Practica4() {
         <h3>Calcular resultado de las 4 entradas</h3>
         <LogicGates
           setResult={setThirdResult}
-          inputValue={firstResult}
-          checkboxValue={secondResult}
+          firstInput={firstResult}
+          secondInput={secondResult}
         />
       </div>
       <div>

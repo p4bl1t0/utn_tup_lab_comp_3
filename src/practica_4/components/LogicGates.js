@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from 'react';
 
-const LogicGates = ({ setResult, inputValue, checkboxValue }) => {
+const LogicGates = ({ setResult, firstInput, secondInput }) => {
   const [selectedOption, setSelectedOption] = useState('');
   
 
   useEffect(() => {
     if (selectedOption === 'OR') {
-        (inputValue === 1 || checkboxValue === 1) ? setResult(1) : setResult(0);
+        (firstInput === 1 || secondInput === 1) ? setResult(1) : setResult(0);
       } else if (selectedOption === 'AND') {
-        setResult(inputValue && checkboxValue);
+        setResult(firstInput && secondInput);
       } else if (selectedOption === 'NAND') {
-        !(inputValue && checkboxValue) ? setResult(1) : setResult(0);
+        !(firstInput && secondInput) ? setResult(1) : setResult(0);
       } else if (selectedOption === 'NOR') {
-        !(inputValue || checkboxValue) ? setResult(1) : setResult(0);
+        !(firstInput || secondInput) ? setResult(1) : setResult(0);
       } else {
-        (inputValue && !checkboxValue) || (!inputValue && checkboxValue) ? setResult(1) : setResult(0);
+        (firstInput && !secondInput) || (!firstInput && secondInput) ? setResult(1) : setResult(0);
       }
-  }, [inputValue, checkboxValue, selectedOption, setResult]);
+  }, [firstInput, secondInput, selectedOption, setResult]);
 
   const handleSelectChange = (e) => {
     const select1 = e.target.value;
