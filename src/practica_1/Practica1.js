@@ -124,16 +124,24 @@ const watchList = [
 ];
 
 const filterMovies = (watchlist) => {
-    // Aquí adentro escriban la función para filtrar
-	return [];
+    const filtered = watchList.filter((peliculas) => {
+		return peliculas.Director === "Christopher Nolan" && peliculas.imdbRating > 8.0;
+	});
+
+	return filtered;
 }
+
+
 const returnMovieTitle = (watchlist) => {
-    // Aquí adentro escriban la función para mostrar titulo
-	return [];
+	const movieNames = watchList.map((peliculas) => {
+		return peliculas.Title;
+	})
+	return movieNames;
 }
 const sumOfDuration = (watchlist) => {
     // Aquí adentro escriban la función para sumarizar
-	return 0;
+	const sumatoria = watchlist.reduce((previousSum, currentMovie) => (previousSum += parseInt(currentMovie.Runtime,10)) ,0);
+	return sumatoria;
 }
 export default function Practica1 () {
 	let moviesFiltered = filterMovies(watchList);
@@ -143,6 +151,7 @@ export default function Practica1 () {
     if (!Array.isArray(titlesArray)) {
         titlesArray = [];
     }
+
     return (
         <div>
             <p>Películas de Christopher Nolan: { durationSum } minutos</p>

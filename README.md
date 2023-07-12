@@ -1,4 +1,6 @@
-# TUP - UTN - Laboratorio de computación 3 - Práctica
+
+
+# TUP - UTN - Laboratorio de computación 3 - Práctica¨Lucas Lodigiani 50.641
 
 Leer el enunciado de cada práctica en cada carpeta y resolverlo adecuamente de forma que se cumplan test.
 
