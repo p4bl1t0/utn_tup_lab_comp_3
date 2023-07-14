@@ -1,5 +1,10 @@
-import Practica2 from "../Practica2";
 
-const Body = ({pageBody}) => (<div>{pageBody}</div>);
+const Body = ({body}) => {
+    return (
+    <div>
+        <div>{body}</div>
+    </div>
+    );
+}
 
 export default Body;

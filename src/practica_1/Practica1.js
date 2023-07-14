@@ -122,13 +122,13 @@ const watchList = [
 		Response: 'True',
 	},
 ];
-
+ 
 const filterMovies = (watchlist) => {
     return watchlist.filter((movie) => 
 	(movie.Director === 'Christopher Nolan' && Number(movie.imdbRating) >= 8));
 }
-const returnMovieTitle = (watchlist) => {
-	return watchlist.map((movie)=> (movie.Title));
+const returnMovieTitle = (moviesFiltered) => {
+	return moviesFiltered.map((movie)=> (movie.Title));
 }
 const sumOfDuration = (watchlist) => {
 	return watchlist.reduce((previousSum, currentMovie)=> (

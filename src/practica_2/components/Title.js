@@ -1,5 +1,10 @@
-import Practica2 from "../Practica2";
 
-const Title = ({pageTitle}) => (<h1>{pageTitle}</h1>);
+const Title = ( {title} ) => {
+    return (
+    <>
+       <h1>{title.toUpperCase}</h1>
+    </>
+    )
+}
 
-export default Title;
+export default Title; 
