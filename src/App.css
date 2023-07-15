@@ -12,3 +12,21 @@
 .body-page {
   font-style: italic;
 }
+
+.header-title {
+  text-transform: uppercase;
+}
+
+.blog-post .title {
+  text-transform: none;
+}
+
+.main-body {
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.blog-post .body {
+  text-transform: none;
+  font-style: normal;
+}
